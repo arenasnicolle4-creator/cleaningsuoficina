@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Office Building Cleaning &#8212; Cleaning Su Oficina</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Oswald:wght@300;400&family=Allura&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --white:#ffffff;
+      --off-white:#EEF2F9;
+      --accent:#4A72B5;
+      --accent-dark:#1B3A6B;
+      --accent-pale:#E2EAF8;
+      --text-dark:#0d1e36;
+      --text-mid:#2d4470;
+      --text-soft:#5a6e8c;
+      --text-faint:#a0aec0;
+      --border:rgba(27,58,107,0.12);
+      --grad-accent:linear-gradient(135deg,#1B3A6B 0%,#2d5494 55%,#4A72B5 100%);
+      --grad-dark:linear-gradient(135deg,#070d1a 0%,#0f1d38 38%,#1b2f55 72%,#243d6e 100%);
+      --grad-subtle:linear-gradient(160deg,#EEF2F9 0%,#dce5f5 100%);
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text-dark);overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 2rem;height:72px;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.97);backdrop-filter:blur(18px);border-bottom:1px solid rgba(27,58,107,0.10);transition:box-shadow 0.3s}
+    .nav-links{display:flex;align-items:center;list-style:none;flex:1;justify-content:center;gap:0}
+    .nav-links>li{position:relative}
+    .nav-links>li>a,.nav-links>li>button{display:inline-flex;align-items:center;gap:0.28rem;text-decoration:none;background:none;border:none;cursor:pointer;color:var(--text-mid);font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;padding:0.52rem 0.8rem;border-radius:8px;white-space:nowrap;transition:color 0.2s,background 0.2s}
+    .nav-links>li>a:hover,.nav-links>li>button:hover,.nav-links>li.open>a,.nav-links>li.open>button{color:var(--accent-dark);background:var(--off-white)}
+    .nav-chevron{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:transform 0.25s;flex-shrink:0}
+    .nav-links>li.open .nav-chevron{transform:rotate(180deg)}
+    .nav-dropdown{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:white;border:1px solid rgba(27,58,107,0.10);border-radius:16px;padding:0.45rem;box-shadow:0 16px 48px 0 14px 36px rgba(27,58,107,0.16);min-width:240px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.2s ease,transform 0.2s ease,visibility 0.2s;z-index:300}
+    .nav-links>li.open .nav-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+    .nav-dropdown::before{content:'';position:absolute;top:-6px;left:50%;width:12px;height:12px;background:white;border-left:1px solid rgba(27,58,107,0.10);border-top:1px solid rgba(27,58,107,0.10);transform:translateX(-50%) rotate(45deg);border-radius:2px 0 0 0}
+    .nav-dropdown a{display:flex;align-items:center;gap:0.7rem;padding:0.7rem 0.9rem;border-radius:10px;text-decoration:none;color:var(--text-mid);font-size:0.84rem;font-weight:500;transition:background 0.18s,color 0.18s}
+    .nav-dropdown a:hover{background:var(--off-white);color:var(--accent-dark)}
+    .nav-dropdown a .dd-icon{width:34px;height:34px;border-radius:9px;flex-shrink:0;background:var(--off-white);display:flex;align-items:center;justify-content:center;font-size:1rem}
+    .nav-dropdown a .dd-title{font-weight:600;color:var(--accent-dark);font-size:0.84rem;display:block}
+    .nav-dropdown a .dd-sub{font-size:0.73rem;color:var(--text-soft);display:block;margin-top:0.05rem}
+    .dd-divider{height:1px;background:var(--border);margin:0.3rem 0.5rem}
+    .nav-cta{background:var(--grad-accent);color:white;padding:0.62rem 1.35rem;border-radius:50px;font-size:0.78rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;transition:all 0.25s;box-shadow:0 4px 22px rgba(27,58,107,0.35);white-space:nowrap;flex-shrink:0;text-decoration:none;display:inline-block}
+    .nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 32px rgba(27,58,107,0.50)}
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;flex-shrink:0}
+    .nav-hamburger span{display:block;width:24px;height:2px;background:var(--accent-dark);border-radius:2px;transition:all 0.3s}
+    .nav-mobile{display:none;position:fixed;top:72px;left:0;right:0;bottom:0;background:white;z-index:199;overflow-y:auto;padding:1rem 1.5rem 3rem;flex-direction:column}
+    .nav-mobile.open{display:flex}
+    .nav-mobile a,.nav-mobile button{display:block;width:100%;text-align:left;background:none;border:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:500;color:var(--text-mid);text-decoration:none;cursor:pointer;padding:0.85rem 1rem;border-radius:10px;transition:all 0.18s}
+    .nav-mobile a:hover{background:var(--off-white);color:var(--accent-dark)}
+    .mob-section{font-size:0.68rem!important;font-weight:700!important;letter-spacing:0.12em!important;text-transform:uppercase;color:var(--text-faint)!important;padding:1rem 1rem 0.3rem!important}
+    .mob-indent{padding-left:2.2rem!important}
+    .mob-cta{background:var(--grad-accent)!important;color:white!important;text-align:center!important;border-radius:50px!important;margin-top:1rem;font-weight:600!important}
+    @media(max-width:860px){.nav-links,.nav-cta{display:none}.nav-hamburger{display:flex}}
+    .hero{min-height:88vh;display:flex;align-items:center;padding:9rem 5.5rem 6rem;background-color:#070d1a;background-image:radial-gradient(circle at 18% 28%,rgba(27,58,107,0.72) 0%,transparent 45%),radial-gradient(circle at 80% 68%,rgba(45,84,148,0.50) 0%,transparent 40%),radial-gradient(circle at 55% 8%,rgba(74,114,181,0.08) 0%,transparent 30%),radial-gradient(ellipse at 4% 88%,rgba(15,29,56,0.65) 0%,transparent 40%),radial-gradient(circle 1px at center,rgba(255,255,255,0.05) 0%,transparent 100%);background-size:100% 100%,100% 100%,100% 100%,100% 100%,26px 26px;position:relative;overflow:hidden}
+    .hero-orb{position:absolute;border-radius:50%;pointer-events:none}
+    .hero-orb-1{width:600px;height:600px;top:50%;left:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(27,58,107,0.28) 0%,transparent 70%);animation:porb 7s ease-in-out infinite}
+    .hero-orb-2{width:320px;height:320px;top:8%;right:5%;background:radial-gradient(circle,rgba(74,114,181,0.15) 0%,transparent 70%);animation:porb2 9s ease-in-out infinite reverse}
+    .hero-orb-3{width:220px;height:220px;bottom:12%;left:5%;background:radial-gradient(circle,rgba(190,215,255,0.10) 0%,transparent 70%);animation:porb2 6s ease-in-out infinite}
+    @keyframes porb{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.12);opacity:0.7}}
+    @keyframes porb2{0%,100%{transform:scale(1)}50%{transform:scale(1.18);opacity:0.6}}
+    .hero-rings{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+    .hero-rings svg{position:absolute}
+    .hero-dots{position:absolute;inset:0;pointer-events:none}
+    .dot-p{position:absolute;border-radius:50%;background:#7aacee;opacity:0.2;animation:pdrift linear infinite}
+    @keyframes pdrift{0%{transform:translateY(0);opacity:0}10%{opacity:0.2}90%{opacity:0.12}100%{transform:translateY(-110px) rotate(360deg);opacity:0}}
+    .hero-content{position:relative;z-index:1;max-width:720px}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.74rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(122,172,238,0.88);margin-bottom:1.4rem}
+    .hero-eyebrow::before{content:'';width:24px;height:2px;background:#7aacee;border-radius:2px;display:block}
+    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,5.5vw,5.2rem);font-weight:900;line-height:1.06;letter-spacing:-0.025em;color:white;margin-bottom:1.4rem}
+    .hero h1 em{font-style:italic;color:#7aacee}
+    .hero-sub{font-size:1.08rem;line-height:1.78;color:rgba(255,255,255,0.52);max-width:600px;font-weight:300;margin-bottom:2.8rem}
+    .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
+    .btn-accent{background:var(--grad-accent);color:white;padding:1rem 2.4rem;border-radius:50px;text-decoration:none;font-size:0.92rem;font-weight:700;transition:all 0.25s;box-shadow:0 4px 22px rgba(27,58,107,0.35);display:inline-block}
+    .btn-accent:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(27,58,107,0.50)}
+    .btn-outline-hero{background:transparent;color:white;padding:1rem 2.4rem;border-radius:50px;text-decoration:none;font-size:0.92rem;font-weight:600;transition:all 0.25s;border:1.5px solid rgba(255,255,255,0.35);display:inline-block}
+    .btn-outline-hero:hover{background:rgba(255,255,255,0.10);border-color:rgba(255,255,255,0.6)}
+    .hero-pills{display:flex;gap:0.6rem;flex-wrap:wrap}
+    .hero-pill{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);border-radius:50px;padding:0.45rem 1rem;font-size:0.78rem;font-weight:500;color:rgba(255,255,255,0.72);letter-spacing:0.04em}
+    .hero-pill::before{content:'';width:5px;height:5px;border-radius:50%;background:#7aacee;flex-shrink:0}
+    .section-tag{font-size:0.74rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem}
+    .section-tag::before{content:'';width:20px;height:2px;background:var(--accent);border-radius:2px;display:block}
+    .section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,3vw,2.8rem);font-weight:700;line-height:1.15;letter-spacing:-0.02em;color:var(--text-dark);margin-bottom:1.2rem}
+    .section-title em{font-style:italic;color:var(--accent-dark)}
+    .offer-intro{padding:6rem 5.5rem;background:white;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+    .offer-intro-text p{font-size:1rem;line-height:1.8;color:var(--text-mid);font-weight:300;margin-bottom:1.2rem}
+    .offer-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .offer-stat{background:var(--grad-subtle);border-radius:18px;padding:1.6rem 1.4rem;border:1px solid var(--border);transition:all 0.3s}
+    .offer-stat:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(27,58,107,0.16)}
+    .offer-stat:nth-child(1){background:var(--grad-accent);border-color:transparent}
+    .offer-stat-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;line-height:1;margin-bottom:0.3rem;color:var(--accent-dark)}
+    .offer-stat:nth-child(1) .offer-stat-num{color:white}
+    .offer-stat-lbl{font-size:0.74rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-soft)}
+    .offer-stat:nth-child(1) .offer-stat-lbl{color:rgba(255,255,255,0.65)}
+    .why-us{padding:5.5rem 5.5rem;background:var(--grad-dark);position:relative;overflow:hidden}
+    .why-us::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 90% 50%,rgba(74,114,181,0.14) 0%,transparent 55%);pointer-events:none}
+    .why-us-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;position:relative;z-index:1}
+    .why-us .section-tag{color:#7aacee}
+    .why-us .section-tag::before{background:#7aacee}
+    .why-us .section-title{color:white}
+    .why-us .section-title em{color:#7aacee}
+    .why-us p{font-size:1rem;line-height:1.8;color:rgba(255,255,255,0.52);font-weight:300;margin-bottom:1.2rem}
+    .why-cards{display:flex;flex-direction:column;gap:1rem}
+    .why-card{background:rgba(255,255,255,0.05);border:1px solid rgba(122,172,238,0.22);border-radius:18px;padding:1.5rem 1.6rem;display:flex;align-items:flex-start;gap:1rem;transition:all 0.3s}
+    .why-card:hover{background:rgba(255,255,255,0.09);border-color:#7aacee;transform:translateX(5px)}
+    .why-card-icon{width:44px;height:44px;border-radius:12px;flex-shrink:0;background:rgba(122,172,238,0.12);border:1px solid rgba(122,172,238,0.22);display:flex;align-items:center;justify-content:center;font-size:1.3rem}
+    .why-card-title{font-weight:600;font-size:0.92rem;color:white;margin-bottom:0.3rem}
+    .why-card-desc{font-size:0.82rem;line-height:1.65;color:rgba(255,255,255,0.48)}
+    .services-section{padding:6rem 5.5rem;background:var(--grad-subtle)}
+    .section-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem}
+    .section-link{color:var(--accent-dark);text-decoration:none;font-size:0.88rem;font-weight:600;border-bottom:1.5px solid var(--accent);padding-bottom:2px;transition:all 0.2s}
+    .section-link:hover{color:var(--accent-dark);border-color:var(--accent-dark)}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+    .svc{background:white;border-radius:20px;padding:2rem 1.8rem;border:1.5px solid var(--border);transition:all 0.3s;position:relative;overflow:hidden}
+    .svc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--grad-accent);transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
+    .svc:hover{transform:translateY(-5px);box-shadow:0 14px 36px rgba(27,58,107,0.16);border-color:rgba(27,58,107,0.30)}
+    .svc:hover::after{transform:scaleX(1)}
+    .svc.dark{background:var(--grad-accent);border-color:transparent}
+    .svc.dark:hover{box-shadow:0 8px 32px rgba(27,58,107,0.50)}
+    .svc-icon{font-size:1.9rem;margin-bottom:1rem}
+    .svc-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:0.5rem;color:var(--text-dark)}
+    .svc.dark .svc-title{color:white}
+    .svc-desc{font-size:0.85rem;line-height:1.7;color:var(--text-mid)}
+    .svc.dark .svc-desc{color:rgba(255,255,255,0.68)}
+    .svc-tag{display:inline-block;margin-top:0.9rem;background:var(--off-white);color:var(--accent-dark);font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.28rem 0.75rem;border-radius:50px}
+    .svc.dark .svc-tag{background:rgba(255,255,255,0.18);color:white}
+    .full-list{padding:6rem 5.5rem;background:white}
+    .full-list-intro{font-size:1rem;line-height:1.78;color:var(--text-mid);max-width:580px;font-weight:300;margin-top:0.6rem;margin-bottom:3rem}
+    .full-list-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+    .list-item{display:flex;align-items:flex-start;gap:0.9rem;padding:1.4rem 1.3rem;border-radius:14px;border:1px solid var(--border);background:var(--grad-subtle);transition:all 0.25s}
+    .list-item:hover{border-color:rgba(27,58,107,0.30);background:var(--accent-pale);transform:translateX(3px)}
+    .list-check{width:26px;height:26px;border-radius:50%;flex-shrink:0;margin-top:1px;background:rgba(27,58,107,0.08);border:1px solid rgba(74,114,181,0.28);display:flex;align-items:center;justify-content:center;font-size:0.65rem;color:var(--accent-dark);font-weight:700}
+    .list-title{font-size:0.9rem;font-weight:600;color:var(--text-dark);margin-bottom:0.25rem}
+    .list-desc{font-size:0.81rem;line-height:1.62;color:var(--text-soft)}
+    .cta-band{padding:5.5rem 5.5rem;background:var(--grad-dark);display:flex;justify-content:space-between;align-items:center;gap:3rem;flex-wrap:wrap;position:relative;overflow:hidden}
+    .cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 10% 50%,rgba(74,114,181,0.14) 0%,transparent 50%);pointer-events:none}
+    .cta-band>*{position:relative;z-index:1}
+    .cta-tag{font-size:0.74rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:#7aacee;margin-bottom:0.8rem;display:flex;align-items:center;gap:0.5rem}
+    .cta-tag::before{content:'';width:20px;height:2px;background:var(--accent);border-radius:2px;display:block}
+    .cta-band h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:white;line-height:1.14;letter-spacing:-0.02em}
+    .cta-band h2 em{font-style:italic;color:#7aacee}
+    .cta-actions{display:flex;flex-direction:column;gap:0.8rem;align-items:flex-end;flex-shrink:0}
+    .cta-note{font-size:0.8rem;color:rgba(255,255,255,0.42);text-align:right}
+    footer{background:#070d1a;color:white;padding:3.5rem 5.5rem 2rem}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem}
+    .footer-brand-cleaning{font-family:'Oswald',sans-serif;font-size:1.05rem;font-weight:300;letter-spacing:6px;text-transform:uppercase;color:white;display:block}
+    .footer-brand-sub{font-family:'Allura',cursive;font-size:1.9rem;color:#7aacee;letter-spacing:1px;display:block}
+    .footer-tagline{font-size:0.87rem;line-height:1.7;color:rgba(255,255,255,0.32);max-width:240px;margin-top:0.8rem}
+    .footer-col h4{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#7aacee;margin-bottom:1rem}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+    .footer-col ul a{color:rgba(255,255,255,0.45);text-decoration:none;font-size:0.86rem;transition:color 0.2s}
+    .footer-col ul a:hover{color:#7aacee}
+    .footer-bottom{display:flex;justify-content:space-between;align-items:center;font-size:0.78rem;color:rgba(255,255,255,0.25);padding-top:2rem;border-top:1px solid rgba(255,255,255,0.08);margin-top:2rem}
+    @media(max-width:1000px){.hero,.offer-intro,.services-section,.full-list,.cta-band,.why-us{padding:5rem 2rem}.offer-intro,.why-us-grid{grid-template-columns:1fr}.services-grid{grid-template-columns:1fr 1fr}.full-list-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr;gap:2rem}}
+    @media(max-width:620px){.hero{padding:7rem 1.2rem 3.5rem}.hero h1{font-size:clamp(2.4rem,11vw,3.8rem)!important;line-height:1.1}.hero-sub{font-size:0.92rem}.hero-actions{flex-direction:column;gap:0.8rem}.hero-actions a{text-align:center}.services-grid{grid-template-columns:1fr}.offer-intro,.services-section,.full-list,.cta-band,.why-us{padding:3.5rem 1.2rem}.section-title{font-size:1.75rem}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:0.5rem;text-align:center}.cta-band{flex-direction:column}.cta-actions{align-items:flex-start}}
+  </style>
+</head>
+<body>
+<nav id="mainNav">
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li id="navServices">
+      <button data-toggle="navServices" aria-expanded="false">Services <svg class="nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="nav-dropdown">
+        <a href="office.html"><span class="dd-icon">&#127970;</span><span><span class="dd-title">Office Buildings</span><span class="dd-sub">Corporate, law &amp; co-working</span></span></a>
+        <a href="hospitality.html"><span class="dd-icon">&#127976;</span><span><span class="dd-title">Hospitality</span><span class="dd-sub">Hotels, apartments &amp; venues</span></span></a>
+        <a href="retail.html"><span class="dd-icon">&#127914;</span><span><span class="dd-title">Retail</span><span class="dd-sub">Stores, gyms &amp; salons</span></span></a>
+        <a href="healthcare.html"><span class="dd-icon">&#127973;</span><span><span class="dd-title">Healthcare</span><span class="dd-sub">Clinics, dental &amp; medical offices</span></span></a>
+        <a href="industrial.html"><span class="dd-icon">&#127981;</span><span><span class="dd-title">Industrial</span><span class="dd-sub">Warehouses &amp; facilities</span></span></a>
+      </div>
+    </li>
+    <li><a href="https://c-su-oficina.vercel.app/">Get a Quote</a></li>
+    <li id="navMore">
+      <button data-toggle="navMore" aria-expanded="false">More <svg class="nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="nav-dropdown">
+        <a href="/cdn-cgi/l/email-protection#97d4fbf2f6f9fef9f0c4e2d8f1fef4fef9f6d7f0faf6fefbb9f4f8fa"><span class="dd-icon">&#128231;</span><span><span class="dd-title">Contact Us</span><span class="dd-sub"><span class="__cf_email__" data-cfemail="cb88a7aeaaa5a2a5ac98be84ada2a8a2a5aa8baca6aaa2a7e5a8a4a6">[email&#160;protected]</span></span></span></a>
+        <div class="dd-divider"></div>
+        <a href="https://cleaningsucasa.com" target="_blank"><span class="dd-icon">&#127969;</span><span><span class="dd-title">Cleaning Su Casa</span><span class="dd-sub">Residential &amp; Airbnb cleaning</span></span></a>
+      </div>
+    </li>
+  </ul>
+  <a href="https://c-su-oficina.vercel.app/" class="nav-cta">Get a Quote</a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-mobile" id="mobileMenu">
+  <div class="mob-section">Services</div>
+  <a href="office.html" class="mob-indent">&#127970; &nbsp;Office Buildings</a>
+  <a href="hospitality.html" class="mob-indent">&#127976; &nbsp;Hospitality</a>
+  <a href="retail.html" class="mob-indent">&#127914; &nbsp;Retail</a>
+  <a href="healthcare.html" class="mob-indent">&#127973; &nbsp;Healthcare</a>
+  <a href="industrial.html" class="mob-indent">&#127981; &nbsp;Industrial</a>
+  <a href="https://c-su-oficina.vercel.app/">Get a Quote</a>
+  <a href="/cdn-cgi/l/email-protection#c586a9a0a4abacaba296b08aa3aca6acaba485a2a8a4aca9eba6aaa8">Contact Us</a>
+  <div class="mob-section">Our Family</div>
+  <a href="https://cleaningsucasa.com" class="mob-indent" target="_blank">&#127969; &nbsp;Cleaning Su Casa</a>
+  <a href="https://c-su-oficina.vercel.app/" class="mob-cta">Get a Commercial Quote</a>
+</div>
+<section class="hero">
+  <div class="hero-orb hero-orb-1"></div><div class="hero-orb hero-orb-2"></div><div class="hero-orb hero-orb-3"></div>
+  <div class="hero-rings"><svg width="520" height="520" style="top:-90px;left:28%;opacity:0.32;" viewBox="0 0 520 520"><circle cx="260" cy="260" r="220" fill="none" stroke="#1B3A6B" stroke-width="1.2"/><circle cx="260" cy="260" r="175" fill="none" stroke="#1B3A6B" stroke-width="0.7"/><circle cx="260" cy="260" r="130" fill="none" stroke="#4A72B5" stroke-width="0.5"/></svg><svg width="280" height="280" style="bottom:-50px;right:4%;opacity:0.25;" viewBox="0 0 280 280"><circle cx="140" cy="140" r="115" fill="none" stroke="#1B3A6B" stroke-width="1"/><circle cx="140" cy="140" r="75" fill="none" stroke="#4A72B5" stroke-width="0.6"/></svg></div>
+  <div class="hero-dots">
+    <div class="dot-p" style="width:4px;height:4px;left:22%;bottom:12%;animation-duration:7s;"></div>
+    <div class="dot-p" style="width:3px;height:3px;left:48%;bottom:18%;animation-duration:9s;animation-delay:1.5s;"></div>
+    <div class="dot-p" style="width:5px;height:5px;left:72%;bottom:9%;animation-duration:8s;animation-delay:0.7s;"></div>
+    <div class="dot-p" style="width:3px;height:3px;left:33%;bottom:22%;animation-duration:10s;animation-delay:2s;"></div>
+    <div class="dot-p" style="width:4px;height:4px;left:82%;bottom:28%;animation-duration:7.5s;animation-delay:3s;"></div>
+  </div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Office Building Cleaning &#8212; Anchorage, AK</p>
+    <h1>Cleaner Offices.<br><em>Better Business.</em></h1>
+    <p class="hero-sub">From corporate towers to boutique law firms &#8212; we keep your workspace spotless, sanitized, and professionally presented on a schedule built around your operations.</p>
+    <div class="hero-actions">
+      <a href="https://c-su-oficina.vercel.app/" class="btn-accent">Get an Office Quote &#8594;</a>
+      <a href="#what-we-offer" class="btn-outline-hero">What We Offer</a>
+    </div>
+    <div class="hero-pills"><span class="hero-pill">Corporate Offices</span><span class="hero-pill">Law Firms</span><span class="hero-pill">Co-Working Spaces</span><span class="hero-pill">Real Estate Offices</span><span class="hero-pill">Call Centers</span></div>
+  </div>
+</section>
+<section class="offer-intro">
+  <div class="offer-intro-text">
+    <p class="section-tag">Built for Business</p>
+    <h2 class="section-title">Professional Cleaning,<br><em>On Your Schedule</em></h2>
+    <p>A clean office directly impacts your team&#8217;s health, productivity, and the impression you make on every client who walks through the door. We build your cleaning plan around your hours, your facility, and your standards &#8212; not a one-size-fits-all routine.</p><p>Whether you need daily service after close, weekly deep cleans, or a custom recurring plan, we assign a dedicated team that learns your space and delivers consistent results every visit.</p>
+  </div>
+  <div class="offer-stats"><div class="offer-stat"><div class="offer-stat-num">100%</div><div class="offer-stat-lbl">Satisfaction Guaranteed</div></div><div class="offer-stat"><div class="offer-stat-num">After</div><div class="offer-stat-lbl">Hours Available</div></div><div class="offer-stat"><div class="offer-stat-num">5+</div><div class="offer-stat-lbl">Years in Anchorage</div></div><div class="offer-stat"><div class="offer-stat-num">Est.</div><div class="offer-stat-lbl">2020 &#8212; Locally Owned</div></div></div>
+</section>
+<section class="why-us">
+  <div class="why-us-grid">
+    <div>
+      <p class="section-tag">Why Businesses Choose Us</p>
+      <h2 class="section-title">Reliability You Can<br><em>Count On</em></h2>
+      <p>Consistency matters more than a great first impression. That&#8217;s why we assign the same team to your space every visit &#8212; people who know your building, your preferences, and your standards.</p>
+    </div>
+    <div class="why-cards"><div class="why-card"><div class="why-card-icon">&#128197;</div><div><div class="why-card-title">Flexible Scheduling</div><div class="why-card-desc">Daily, weekly, biweekly, or custom recurring service &#8212; always built around your business hours.</div></div></div><div class="why-card"><div class="why-card-icon">&#128100;</div><div><div class="why-card-title">Dedicated Team</div><div class="why-card-desc">The same cleaners assigned every visit &#8212; familiar with your layout, preferences, and standards.</div></div></div><div class="why-card"><div class="why-card-icon">&#10024;</div><div><div class="why-card-title">Quality Inspection</div><div class="why-card-desc">Final walkthrough before leaving to confirm your space meets our cleanliness standard every time.</div></div></div><div class="why-card"><div class="why-card-icon">&#128274;</div><div><div class="why-card-title">Insured &amp; Background-Checked</div><div class="why-card-desc">Fully insured, bonded, and background-checked team you can trust in your workplace.</div></div></div></div>
+  </div>
+</section>
+<section class="services-section" id="what-we-offer">
+  <div class="section-header">
+    <div><p class="section-tag">Featured Services</p><h2 class="section-title">What We <em>Do Best</em></h2></div>
+    <a href="https://c-su-oficina.vercel.app/" class="section-link">Get a Quote &#8594;</a>
+  </div>
+  <div class="services-grid"><div class="svc"><div class="svc-icon">&#128421;</div><div class="svc-title">Workstation Cleaning &amp; Sanitizing</div><div class="svc-desc">Desks, keyboards, monitors, and phones wiped and disinfected &#8212; high-touch surfaces sanitized to keep your team healthy.</div><span class="svc-tag">Daily / Weekly</span></div><div class="svc dark"><div class="svc-icon">&#128703;</div><div class="svc-title">Bathroom Cleaning &amp; Restocking</div><div class="svc-desc">Toilets, sinks, and mirrors scrubbed; soap, paper towels, and supplies restocked throughout.</div><span class="svc-tag">Every Visit</span></div><div class="svc"><div class="svc-icon">&#127963;</div><div class="svc-title">Common Area Cleaning</div><div class="svc-desc">Lobbies, hallways, break rooms, and conference rooms tidied and sanitized &#8212; a great impression every day.</div><span class="svc-tag">Every Visit</span></div><div class="svc"><div class="svc-icon">&#127798;</div><div class="svc-title">Vacuuming, Mopping &amp; Dusting</div><div class="svc-desc">All floors cleaned and all surfaces dusted &#8212; carpet and hard surface, every room.</div><span class="svc-tag">Every Visit</span></div><div class="svc dark"><div class="svc-icon">&#128167;</div><div class="svc-title">Kitchen Area Maintenance</div><div class="svc-desc">Sinks, countertops, microwaves, and fridges cleaned; dishes washed and trash emptied throughout.</div><span class="svc-tag">Every Visit</span></div><div class="svc"><div class="svc-icon">&#128269;</div><div class="svc-title">Quality Inspection</div><div class="svc-desc">Final walkthrough to confirm the office meets our cleanliness standard before we leave.</div><span class="svc-tag">Every Visit</span></div></div>
+</section>
+<section class="full-list">
+  <p class="section-tag">Full Service List</p>
+  <h2 class="section-title">Everything <em>Included</em></h2>
+  <p class="full-list-intro">Every office is different. This covers our standard scope &#8212; customized based on your facility, layout, and frequency.</p>
+  <div class="full-list-grid"><div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Workstation Cleaning &amp; Sanitizing</div><div class="list-desc">Desks, keyboards, monitors, and phones wiped; high-touch areas sanitized.</div></div></div><div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Bathroom Cleaning &amp; Sanitizing</div><div class="list-desc">Toilets, sinks, and mirrors scrubbed; soap, paper towels, and supplies restocked.</div></div></div><div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Emptying Trash Bins</div><div class="list-desc">Trash removed from workstations, common areas, and bathrooms; liners replaced.</div></div></div><div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Vacuuming &amp; Mopping Floors</div><div class="list-desc">All floors &#8212; carpet and hard surface &#8212; vacuumed and mopped throughout.</div></div></div><div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Dusting</div><div class="list-desc">Surfaces, furniture, shelves, and decor wiped down throughout the office.</div></div></div><div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Common Area Cleaning</div><div class="list-desc">Break rooms, conference rooms, and reception areas tidied and sanitized.</div></div></div><div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Restocking Supplies</div><div class="list-desc">Hand sanitizer, tissues, and kitchen supplies refilled and kept stocked.</div></div></div><div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Window &amp; Glass Surfaces</div><div class="list-desc">Interior windows, glass partitions, and doors cleaned; fingerprints removed.</div></div></div><div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Kitchen Area Maintenance</div><div class="list-desc">Sinks, countertops, microwaves, and fridges cleaned; dishes washed.</div></div></div><div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Elevator &amp; Stairwell Cleaning</div><div class="list-desc">High-traffic areas wiped down and cleaned throughout the building.</div></div></div><div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Lobby &amp; Entryway Cleaning</div><div class="list-desc">Swept, mopped, and sanitized for a great first impression every day.</div></div></div><div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Quality Inspection</div><div class="list-desc">Final walkthrough to confirm cleanliness standards before completion.</div></div></div></div>
+</section>
+<section class="cta-band">
+  <div>
+    <p class="cta-tag">Ready to Elevate Your Workspace?</p>
+    <h2>Let&#8217;s Build Your<br><em>Custom Cleaning Plan</em></h2>
+  </div>
+  <div class="cta-actions">
+    <a href="https://c-su-oficina.vercel.app/" class="btn-accent">Get an Office Quote &#8594;</a>
+    <p class="cta-note">100% satisfaction guaranteed on every visit</p>
+  </div>
+</section>
+<footer>
+  <div class="footer-grid">
+    <div>
+      <span class="footer-brand-cleaning">CLEANING</span>
+      <span class="footer-brand-sub">Su Oficina</span>
+      <p class="footer-tagline">Anchorage&#8217;s commercial cleaning specialists since 2020.</p>
+    </div>
+    <div class="footer-col"><h4>Services</h4><ul>
+      <li><a href="office.html">Office Buildings</a></li><li><a href="hospitality.html">Hospitality</a></li>
+      <li><a href="retail.html">Retail</a></li><li><a href="healthcare.html">Healthcare</a></li><li><a href="industrial.html">Industrial</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Our Family</h4><ul>
+      <li><a href="https://cleaningsucasa.com" target="_blank">Cleaning Su Casa</a></li>
+      <li><a href="https://cleaningsucasa.com/airbnb.html" target="_blank">Airbnb Cleaning</a></li>
+      <li><a href="https://cleaningsucasa.com/residential.html" target="_blank">Residential</a></li>
+      <li><a href="https://cleaningsucasa.com/about.html" target="_blank">About Us</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul>
+      <li><a href="/cdn-cgi/l/email-protection#3b78575e5a5552555c684e745d525852555a7b5c565a525715585456"><span class="__cf_email__" data-cfemail="a8ebc4cdc9c6c1c6cffbdde7cec1cbc1c6c9e8cfc5c9c1c486cbc7c5">[email&#160;protected]</span></a></li>
+      <li><a href="https://c-su-oficina.vercel.app/">Get a Quote</a></li>
+      <li><a href="https://cleaningsucasa.com/jobs.html" target="_blank">Job Openings</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>&#169; 2020 Cleaning Su Oficina / Su Casa. All Rights Reserved.</span>
+    <span>Made with care in Anchorage, AK &#128153;</span>
+  </div>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(function(){
+  if('scrollRestoration' in history){ history.scrollRestoration = 'manual'; }
+  window.scrollTo(0,0);
+  window.addEventListener('load', function(){ window.scrollTo(0,0); });
+  document.addEventListener('click', function(e){
+    var t = e.target.closest('[data-toggle]');
+    if(t){
+      var id = t.getAttribute('data-toggle');
+      var li = document.getElementById(id);
+      var open = li.classList.contains('open');
+      document.querySelectorAll('.nav-links>li').forEach(function(el){ el.classList.remove('open'); });
+      if(!open){ li.classList.add('open'); }
+      return;
+    }
+    if(!e.target.closest('.nav-links') && !e.target.closest('.nav-hamburger')){
+      document.querySelectorAll('.nav-links>li').forEach(function(el){ el.classList.remove('open'); });
+    }
+    if(e.target.closest('.nav-hamburger')){
+      var menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('open');
+      var bars = document.querySelectorAll('.nav-hamburger span');
+      if(menu.classList.contains('open')){
+        bars[0].style.transform = 'translateY(7px) rotate(45deg)';
+        bars[1].style.opacity = '0';
+        bars[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+      } else {
+        bars.forEach(function(b){ b.style.transform = ''; b.style.opacity = ''; });
+      }
+    }
+  });
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var target = document.querySelector(this.getAttribute('href'));
+      if(target){
+     
