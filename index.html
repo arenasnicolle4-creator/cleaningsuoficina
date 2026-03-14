@@ -316,7 +316,7 @@
       <button data-toggle="navMore" aria-expanded="false">More <svg class="nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="nav-dropdown">
         <a href="#about"><span class="dd-icon">&#10024;</span><span><span class="dd-title">Who We Are</span><span class="dd-sub">Our story &amp; mission</span></span></a>
-        <a href="/cdn-cgi/l/email-protection#9fdcf3fafef1f6f1f8ccead0f9f6fcf6f1fedff8f2fef6f3b1fcf0f2"><span class="__cf_email__" data-cfemail="4f0c232a2e212621281c3a0029262c26212e0f28222e2623612c2022">[email&#160;protected]</span></a>
+        <a href="mailto:CleaningSuOficina@gmail.com">CleaningSuOficina@gmail.com</a>
         <div class="dd-divider"></div>
         <a href="https://cleaningsucasa.com" target="_blank"><span class="dd-icon">&#127969;</span><span><span class="dd-title">Cleaning Su Casa</span><span class="dd-sub">Residential &amp; Airbnb cleaning</span></span></a>
       </div>
@@ -332,7 +332,7 @@
   <a href="#services" class="mob-indent">&#127963; &nbsp;Move-In / Move-Out</a>
   <a href="https://c-su-oficina.vercel.app/">Get a Quote</a>
   <a href="#about">Who We Are</a>
-  <a href="/cdn-cgi/l/email-protection#b2f1ded7d3dcdbdcd5e1c7fdd4dbd1dbdcd3f2d5dfd3dbde9cd1dddf"><span class="__cf_email__" data-cfemail="cb88a7aeaaa5a2a5ac98be84ada2a8a2a5aa8baca6aaa2a7e5a8a4a6">[email&#160;protected]</span></a>
+  <a href="mailto:CleaningSuOficina@gmail.com">CleaningSuOficina@gmail.com</a>
   <div class="mob-section">Our Family</div>
   <a href="https://cleaningsucasa.com" class="mob-indent" target="_blank">&#127969; &nbsp;Cleaning Su Casa</a>
   <a href="https://c-su-oficina.vercel.app/" class="mob-cta">Get a Commercial Quote</a>
@@ -673,7 +673,7 @@
   </div>
   <div class="cta-actions">
     <a href="https://c-su-oficina.vercel.app/" class="btn-cta">Get a Commercial Quote</a>
-    <p class="cta-email">Questions? <a href="/cdn-cgi/l/email-protection#2f6c434a4e414641487c5a6049464c46414e6f48424e4643014c4042"><span class="__cf_email__" data-cfemail="5e1d323b3f303730390d2b1138373d37303f1e39333f3732703d3133">[email&#160;protected]</span></a></p>
+    <p class="cta-email">Questions? <a href="mailto:CleaningSuOficina@gmail.com">CleaningSuOficina@gmail.com</a></p>
   </div>
 </section>
 
@@ -708,7 +708,7 @@
     <div class="footer-col">
       <h4>Contact</h4>
       <ul>
-        <li><a href="/cdn-cgi/l/email-protection#0e4d626b6f606760695d7b4168676d67606f4e69636f6762206d6163"><span class="__cf_email__" data-cfemail="82c1eee7e3ecebece5d1f7cde4ebe1ebece3c2e5efe3ebeeace1edef">[email&#160;protected]</span></a></li>
+        <li><a href="mailto:CleaningSuOficina@gmail.com">CleaningSuOficina@gmail.com</a></li>
         <li><a href="https://c-su-oficina.vercel.app/">Book Online</a></li>
         <li><a href="https://cleaningsucasa.com/jobs.html" target="_blank">Job Openings</a></li>
       </ul>
@@ -720,7 +720,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 (function(){
   if('scrollRestoration' in history){ history.scrollRestoration = 'manual'; }
   window.scrollTo(0,0);
@@ -760,4 +760,24 @@
         if(menu) menu.classList.remove('open');
         var bars = document.querySelectorAll('.nav-hamburger span');
         bars.forEach(function(b){ b.style.transform = ''; b.style.opacity = ''; });
-        setTimeout(function(){ target.s
+        setTimeout(function(){ target.scrollIntoView({behavior:'smooth'}); }, 50);
+      }
+    });
+  });
+  var fadeEls = document.querySelectorAll('.fade-up');
+  if('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('visible'); } });
+    }, {threshold:0.12});
+    fadeEls.forEach(function(el){ obs.observe(el); });
+  } else {
+    fadeEls.forEach(function(el){ el.classList.add('visible'); });
+  }
+  window.addEventListener('scroll', function(){
+    var nav = document.querySelector('nav');
+    if(nav) nav.style.boxShadow = window.scrollY > 50 ? '0 4px 30px rgba(26,37,47,0.12)' : 'none';
+  });
+})();
+</script>
+</body>
+</html>
