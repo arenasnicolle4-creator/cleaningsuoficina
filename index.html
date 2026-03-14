@@ -183,11 +183,11 @@
     .service-card:nth-child(5){background:var(--grad-copper);border-color:transparent}
     .service-card:nth-child(6){background:linear-gradient(145deg,#ffffff 0%,var(--light-steel) 100%)}
     .service-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--chrome),var(--copper));transform:scaleX(0);transform-origin:left;transition:transform 0.35s ease}
-    .service-card:hover{transform:translateY(-6px);box-shadow:0 22px 52px rgba(26,37,47,0.10)}
+    .service-card:hover{transform:translateY(-6px);box-shadow:0 22px 52px rgba(26,37,47,0.10);text-decoration:none}
     .service-card:nth-child(2):hover,.service-card:nth-child(5):hover{box-shadow:0 22px 52px rgba(26,37,47,0.3)}
     .service-card:hover::after{transform:scaleX(1)}
     .service-icon{font-size:2.2rem;margin-bottom:1.3rem}
-    .service-name{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;margin-bottom:0.7rem;color:var(--steel)}
+    .service-name{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;margin-bottom:0.7rem;color:var(--steel);display:block}
     .service-card:nth-child(2) .service-name,.service-card:nth-child(5) .service-name{color:white}
     .service-desc{font-size:0.88rem;line-height:1.72;color:var(--text-mid);margin-bottom:1.4rem}
     .service-card:nth-child(2) .service-desc,.service-card:nth-child(5) .service-desc{color:rgba(255,255,255,0.62)}
@@ -290,11 +290,16 @@
     .footer-col ul a{color:rgba(255,255,255,0.48);text-decoration:none;font-size:0.87rem;transition:color 0.2s}
     .footer-col ul a:hover{color:var(--copper-light)}
     .footer-bottom{display:flex;justify-content:space-between;align-items:center;font-size:0.78rem;color:rgba(255,255,255,0.24)}
-    .fade-up{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
+    .fade-up{opacity:1;transform:translateY(0);transition:opacity 0.6s ease,transform 0.6s ease}
     .fade-up.visible{opacity:1;transform:translateY(0)}
     @media(max-width:1100px){.hero{grid-template-columns:1fr}.hero-right{display:none}.hero-left{padding:6rem 3rem 5rem;min-height:80vh}.process-steps{grid-template-columns:repeat(3,1fr)}}
     @media(max-width:1000px){.pricing,.services,.about,.process,.testimonials,.cta-band{padding:5rem 2rem}.about{grid-template-columns:1fr}.pricing-grid,.services-grid{grid-template-columns:1fr 1fr}.footer-top{grid-template-columns:1fr 1fr;gap:2rem}}
     @media(max-width:640px){.hero-left{padding:5.5rem 1.4rem 4rem}.hero-sub{font-size:0.92rem}.hero-actions{flex-direction:column;gap:0.8rem}.hero-actions a{text-align:center}.hero-stats{gap:1.5rem}.pricing-grid,.services-grid{grid-template-columns:1fr}.about-visual-panel{grid-template-columns:1fr}.avp-card:nth-child(1),.avp-card:nth-child(4){grid-column:span 1;flex-direction:column;align-items:flex-start}.process-steps{grid-template-columns:1fr 1fr}.testimonial-card{width:280px;padding:1.6rem}.section-title{font-size:1.75rem}.cta-band{grid-template-columns:1fr}.cta-actions{align-items:flex-start}.footer-top{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:0.5rem;text-align:center}.pricing,.services,.about,.process,.testimonials,.cta-band{padding:3.5rem 1.2rem}}
+  
+    a.service-card{color:inherit;display:block;}
+    a.service-card:hover{color:inherit;}
+    a.service-card .service-name{color:var(--steel)}
+    a.service-card:nth-child(2) .service-name,a.service-card:nth-child(5) .service-name{color:white}
   </style>
 </head>
 <body>
@@ -306,9 +311,11 @@
     <li id="navServices">
       <button data-toggle="navServices" aria-expanded="false">Services <svg class="nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="nav-dropdown">
-        <a href="#services"><span class="dd-icon">&#127970;</span><span><span class="dd-title">Office Buildings</span><span class="dd-sub">Corporate, law &amp; co-working</span></span></a>
-        <a href="#services"><span class="dd-icon">&#127976;</span><span><span class="dd-title">Hospitality</span><span class="dd-sub">Hotels, apartments &amp; venues</span></span></a>
-        <a href="#services"><span class="dd-icon">&#127973;</span><span><span class="dd-title">Healthcare</span><span class="dd-sub">Move-in/out &amp; deep cleans</span></span></a>
+        <a href="office.html"><span class="dd-icon">&#127970;</span><span><span class="dd-title">Office Buildings</span><span class="dd-sub">Corporate, law &amp; co-working</span></span></a>
+        <a href="hospitality.html"><span class="dd-icon">&#127976;</span><span><span class="dd-title">Hospitality</span><span class="dd-sub">Hotels, apartments &amp; venues</span></span></a>
+        <a href="retail.html"><span class="dd-icon">&#127914;</span><span><span class="dd-title">Retail</span><span class="dd-sub">Stores, gyms &amp; salons</span></span></a>
+        <a href="healthcare.html"><span class="dd-icon">&#127973;</span><span><span class="dd-title">Healthcare</span><span class="dd-sub">Clinics, dental &amp; medical offices</span></span></a>
+        <a href="industrial.html"><span class="dd-icon">&#127981;</span><span><span class="dd-title">Industrial</span><span class="dd-sub">Warehouses &amp; facilities</span></span></a>
       </div>
     </li>
     <li><a href="https://c-su-oficina.vercel.app/">Get a Quote</a></li>
@@ -327,9 +334,11 @@
 </nav>
 <div class="nav-mobile" id="mobileMenu">
   <div class="mob-section">Services</div>
-  <a href="#services" class="mob-indent">&#127970; &nbsp;Office Buildings</a>
-  <a href="#services" class="mob-indent">&#127976; &nbsp;Hospitality</a>
-  <a href="#services" class="mob-indent">&#127963; &nbsp;Move-In / Move-Out</a>
+  <a href="office.html" class="mob-indent">&#127970; &nbsp;Office Buildings</a>
+  <a href="hospitality.html" class="mob-indent">&#127976; &nbsp;Hospitality</a>
+  <a href="retail.html" class="mob-indent">&#127914; &nbsp;Retail</a>
+  <a href="healthcare.html" class="mob-indent">&#127973; &nbsp;Healthcare</a>
+  <a href="industrial.html" class="mob-indent">&#127981; &nbsp;Industrial</a>
   <a href="https://c-su-oficina.vercel.app/">Get a Quote</a>
   <a href="#about">Who We Are</a>
   <a href="mailto:CleaningSuOficina@gmail.com">CleaningSuOficina@gmail.com</a>
@@ -550,12 +559,42 @@
     <a href="https://c-su-oficina.vercel.app/" class="section-link">Get a Quote &#8594;</a>
   </div>
   <div class="services-grid">
-    <div class="service-card fade-up"><div class="service-icon">&#127970;</div><h3 class="service-name">Office Cleaning</h3><p class="service-desc">Corporate offices, law firms, co-working spaces, and small businesses cleaned to a professional standard &#8212; consistently, on schedule.</p><span class="service-tag">Most Booked</span></div>
-    <div class="service-card fade-up"><div class="service-icon">&#127976;</div><h3 class="service-name">Hospitality</h3><p class="service-desc">Hotels, motels, apartment complexes, and short-term rentals &#8212; full turnovers, linen changes, and amenity restocking handled seamlessly.</p><span class="service-tag">High Demand</span></div>
-    <div class="service-card fade-up"><div class="service-icon">&#127963;</div><h3 class="service-name">Move-In / Move-Out</h3><p class="service-desc">Full property deep cleans for apartments, condos, and commercial spaces &#8212; ready for inspection, new tenants, or new ownership.</p><span class="service-tag">On-Demand</span></div>
-    <div class="service-card fade-up"><div class="service-icon">&#128421;</div><h3 class="service-name">Workstation Sanitizing</h3><p class="service-desc">Desks, keyboards, monitors, phones, and high-touch surfaces wiped down &#8212; keeping your team healthy and your office professional.</p><span class="service-tag">Office</span></div>
-    <div class="service-card fade-up"><div class="service-icon">&#128197;</div><h3 class="service-name">Recurring Schedules</h3><p class="service-desc">Daily, weekly, or custom recurring contracts built around your hours &#8212; consistent teams, consistent results, zero effort on your end.</p><span class="service-tag">All Verticals</span></div>
-    <div class="service-card fade-up"><div class="service-icon">&#128269;</div><h3 class="service-name">Quality Inspection</h3><p class="service-desc">Every visit ends with a thorough walkthrough to ensure your facility meets our cleanliness standard before we leave &#8212; guaranteed.</p><span class="service-tag">Every Visit</span></div>
+    <a href="office.html" class="service-card fade-up" style="text-decoration:none;cursor:pointer;">
+      <div class="service-icon">&#127970;</div>
+      <h3 class="service-name">Office Buildings</h3>
+      <p class="service-desc">Corporate offices, law firms, real estate offices, co-working spaces, and call centers &#8212; cleaned professionally on a schedule that fits your business.</p>
+      <span class="service-tag">Learn More &#8594;</span>
+    </a>
+    <a href="hospitality.html" class="service-card fade-up" style="text-decoration:none;cursor:pointer;">
+      <div class="service-icon">&#127976;</div>
+      <h3 class="service-name">Hospitality</h3>
+      <p class="service-desc">Hotels, motels, apartment complexes, Airbnb properties, resorts, and event venues &#8212; meticulous turnovers that keep your ratings high.</p>
+      <span class="service-tag">Learn More &#8594;</span>
+    </a>
+    <a href="retail.html" class="service-card fade-up" style="text-decoration:none;cursor:pointer;">
+      <div class="service-icon">&#127914;</div>
+      <h3 class="service-name">Retail</h3>
+      <p class="service-desc">Retail stores, gyms, salons, restaurants, auto dealerships, and schools &#8212; spotless environments that build customer confidence.</p>
+      <span class="service-tag">Learn More &#8594;</span>
+    </a>
+    <a href="healthcare.html" class="service-card fade-up" style="text-decoration:none;cursor:pointer;">
+      <div class="service-icon">&#127973;</div>
+      <h3 class="service-name">Healthcare</h3>
+      <p class="service-desc">Dental offices, optometrist clinics, physical therapy centers, chiropractic offices, and outpatient medical facilities &#8212; sanitized to clinical standards.</p>
+      <span class="service-tag">Learn More &#8594;</span>
+    </a>
+    <a href="industrial.html" class="service-card fade-up" style="text-decoration:none;cursor:pointer;">
+      <div class="service-icon">&#127981;</div>
+      <h3 class="service-name">Industrial</h3>
+      <p class="service-desc">Warehouses, distribution centers, manufacturing facilities, auto shops, and government buildings &#8212; heavy-duty cleaning at any scale.</p>
+      <span class="service-tag">Learn More &#8594;</span>
+    </a>
+    <a href="https://c-su-oficina.vercel.app/" class="service-card fade-up" style="text-decoration:none;cursor:pointer;">
+      <div class="service-icon">&#128203;</div>
+      <h3 class="service-name">Don&#8217;t See Your Industry?</h3>
+      <p class="service-desc">We clean restaurants, schools, religious facilities, government buildings, gyms, salons, and more &#8212; contact us for a custom quote.</p>
+      <span class="service-tag">Get a Custom Quote &#8594;</span>
+    </a>
   </div>
 </section>
 
@@ -690,9 +729,11 @@
     <div class="footer-col">
       <h4>Industries</h4>
       <ul>
-        <li><a href="#services">Office Buildings</a></li>
-        <li><a href="#services">Hospitality</a></li>
-        <li><a href="#services">Healthcare</a></li>
+        <li><a href="office.html">Office Buildings</a></li>
+        <li><a href="hospitality.html">Hospitality</a></li>
+        <li><a href="retail.html">Retail</a></li>
+        <li><a href="healthcare.html">Healthcare</a></li>
+        <li><a href="industrial.html">Industrial</a></li>
         <li><a href="https://c-su-oficina.vercel.app/">Get a Quote</a></li>
       </ul>
     </div>
@@ -766,12 +807,17 @@
   });
   var fadeEls = document.querySelectorAll('.fade-up');
   if('IntersectionObserver' in window){
+    fadeEls.forEach(function(el){ el.style.opacity='0'; el.style.transform='translateY(20px)'; });
     var obs = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('visible'); } });
-    }, {threshold:0.12});
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          en.target.style.opacity='1';
+          en.target.style.transform='translateY(0)';
+          en.target.style.transition='opacity 0.55s ease,transform 0.55s ease';
+        }
+      });
+    }, {threshold:0.08, rootMargin:'0px 0px -30px 0px'});
     fadeEls.forEach(function(el){ obs.observe(el); });
-  } else {
-    fadeEls.forEach(function(el){ el.classList.add('visible'); });
   }
   window.addEventListener('scroll', function(){
     var nav = document.querySelector('nav');
