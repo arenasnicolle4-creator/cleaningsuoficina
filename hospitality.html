@@ -173,7 +173,7 @@
     <li id="navMore">
       <button data-toggle="navMore" aria-expanded="false">More <svg class="nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="nav-dropdown">
-        <a href="/cdn-cgi/l/email-protection#54173831353a3d3a3307211b323d373d3a35143339353d387a373b39"><span class="dd-icon">&#128231;</span><span><span class="dd-title">Contact Us</span><span class="dd-sub"><span class="__cf_email__" data-cfemail="befdd2dbdfd0d7d0d9edcbf1d8d7ddd7d0dffed9d3dfd7d290ddd1d3">[email&#160;protected]</span></span></span></a>
+        <a href="mailto:CleaningSuOficina@gmail.com">CleaningSuOficina@gmail.com</a>
         <div class="dd-divider"></div>
         <a href="https://cleaningsucasa.com" target="_blank"><span class="dd-icon">&#127969;</span><span><span class="dd-title">Cleaning Su Casa</span><span class="dd-sub">Residential &amp; Airbnb cleaning</span></span></a>
       </div>
@@ -190,7 +190,7 @@
   <a href="healthcare.html" class="mob-indent">&#127973; &nbsp;Healthcare</a>
   <a href="industrial.html" class="mob-indent">&#127981; &nbsp;Industrial</a>
   <a href="https://c-su-oficina.vercel.app/">Get a Quote</a>
-  <a href="/cdn-cgi/l/email-protection#185b747d797671767f4b6d577e717b717679587f75797174367b7775">Contact Us</a>
+  <a href="mailto:CleaningSuOficina@gmail.com">CleaningSuOficina@gmail.com</a>
   <div class="mob-section">Our Family</div>
   <a href="https://cleaningsucasa.com" class="mob-indent" target="_blank">&#127969; &nbsp;Cleaning Su Casa</a>
   <a href="https://c-su-oficina.vercel.app/" class="mob-cta">Get a Commercial Quote</a>
@@ -275,7 +275,7 @@
       <li><a href="https://cleaningsucasa.com/about.html" target="_blank">About Us</a></li>
     </ul></div>
     <div class="footer-col"><h4>Contact</h4><ul>
-      <li><a href="/cdn-cgi/l/email-protection#5b18373e3a3532353c082e143d323832353a1b3c363a323775383436"><span class="__cf_email__" data-cfemail="195a757c787770777e4a6c567f707a707778597e74787075377a7674">[email&#160;protected]</span></a></li>
+      <li><a href="mailto:CleaningSuOficina@gmail.com">CleaningSuOficina@gmail.com</a></li>
       <li><a href="https://c-su-oficina.vercel.app/">Get a Quote</a></li>
       <li><a href="https://cleaningsucasa.com/jobs.html" target="_blank">Job Openings</a></li>
     </ul></div>
@@ -285,7 +285,7 @@
     <span>Made with care in Anchorage, AK &#128153;</span>
   </div>
 </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 (function(){
   if('scrollRestoration' in history){ history.scrollRestoration = 'manual'; }
   window.scrollTo(0,0);
@@ -320,4 +320,15 @@
     a.addEventListener('click', function(e){
       var target = document.querySelector(this.getAttribute('href'));
       if(target){
-     
+        setTimeout(function(){ target.scrollIntoView({behavior:'smooth'}); }, 50);
+      }
+    });
+  });
+  window.addEventListener('scroll', function(){
+    var nav = document.querySelector('nav');
+    if(nav) nav.style.boxShadow = window.scrollY > 50 ? '0 4px 30px rgba(0,0,0,0.10)' : 'none';
+  });
+})();
+</script>
+</body>
+</html>
