@@ -376,7 +376,7 @@
       <div style="font-family:'Allura',cursive;font-size:clamp(3.8rem,6.2vw,6.6rem);color:#D4955A;letter-spacing:3px;margin-top:-6px;line-height:1;">Su Oficina</div>
     </div>
     <p class="hero-eyebrow-sub" style="position:relative;z-index:1;">Anchorage&#8217;s Commercial Cleaning Specialists</p>
-    <p class="hero-sub" style="position:relative;z-index:1;">Professional commercial cleaning for offices, hospitality, and healthcare &#8212; delivered with precision, reliability, and a 100% satisfaction guarantee on every visit.</p>
+    <p class="hero-sub" style="position:relative;z-index:1;">Professional commercial cleaning for offices, hospitality, retail, healthcare, industrial facilities, and more &#8212; delivered with precision, reliability, and a 100% satisfaction guarantee on every visit.</p>
     <div class="hero-actions" style="position:relative;z-index:1;">
       <a href="https://c-su-oficina.vercel.app/" class="btn-primary">Get a Commercial Quote</a>
       <a href="#services" class="btn-outline">Our Services</a>
@@ -724,7 +724,7 @@
         <div class="footer-brand-cleaning">CLEANING</div>
         <div class="footer-brand-suoficina">Su Oficina</div>
       </div>
-      <p class="footer-tagline">Anchorage&#8217;s commercial cleaning specialists for offices, hospitality, and healthcare since 2020.</p>
+      <p class="footer-tagline">Cleaning for offices, hospitality, retail, healthcare, industrial facilities, and more &#8212; Anchorage&#8217;s commercial specialists since 2020.</p>
     </div>
     <div class="footer-col">
       <h4>Industries</h4>
@@ -810,11 +810,7 @@
     fadeEls.forEach(function(el){ el.style.opacity='0'; el.style.transform='translateY(20px)'; });
     var obs = new IntersectionObserver(function(entries){
       entries.forEach(function(en){
-        if(en.isIntersecting){
-          en.target.style.opacity='1';
-          en.target.style.transform='translateY(0)';
-          en.target.style.transition='opacity 0.55s ease,transform 0.55s ease';
-        }
+        if(en.isIntersecting){ en.target.style.opacity='1'; en.target.style.transform='translateY(0)'; en.target.style.transition='opacity 0.55s ease,transform 0.55s ease'; }
       });
     }, {threshold:0.08, rootMargin:'0px 0px -30px 0px'});
     fadeEls.forEach(function(el){ obs.observe(el); });
