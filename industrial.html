@@ -169,7 +169,7 @@
     <li id="navMore">
       <button data-toggle="navMore" aria-expanded="false">More <svg class="nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="nav-dropdown">
-        <a href="/cdn-cgi/l/email-protection#a2e1cec7c3cccbccc5f1d7edc4cbc1cbccc3e2c5cfc3cbce8cc1cdcf"><span class="dd-icon">&#128231;</span><span><span class="dd-title">Contact Us</span><span class="dd-sub"><span class="__cf_email__" data-cfemail="efac838a8e81868188bc9aa089868c86818eaf88828e8683c18c8082">[email&#160;protected]</span></span></span></a>
+        <a href="mailto:CleaningSuOficina@gmail.com">CleaningSuOficina@gmail.com</a>
         <div class="dd-divider"></div>
         <a href="https://cleaningsucasa.com" target="_blank"><span class="dd-icon">&#127969;</span><span><span class="dd-title">Cleaning Su Casa</span><span class="dd-sub">Residential &amp; Airbnb cleaning</span></span></a>
       </div>
@@ -186,7 +186,7 @@
   <a href="healthcare.html" class="mob-indent">&#127973; &nbsp;Healthcare</a>
   <a href="industrial.html" class="mob-indent">&#127981; &nbsp;Industrial</a>
   <a href="https://c-su-oficina.vercel.app/">Get a Quote</a>
-  <a href="/cdn-cgi/l/email-protection#90d3fcf5f1fef9fef7c3e5dff6f9f3f9fef1d0f7fdf1f9fcbef3fffd">Contact Us</a>
+  <a href="mailto:CleaningSuOficina@gmail.com">CleaningSuOficina@gmail.com</a>
   <div class="mob-section">Our Family</div>
   <a href="https://cleaningsucasa.com" class="mob-indent" target="_blank">&#127969; &nbsp;Cleaning Su Casa</a>
   <a href="https://c-su-oficina.vercel.app/" class="mob-cta">Get a Commercial Quote</a>
@@ -313,7 +313,7 @@
     <div class="footer-col">
       <h4>Contact</h4>
       <ul>
-        <li><a href="/cdn-cgi/l/email-protection#fbb8979e9a9592959ca88eb49d929892959abb9c969a9297d5989496"><span class="__cf_email__" data-cfemail="c784aba2a6a9aea9a094b288a1aea4aea9a687a0aaa6aeabe9a4a8aa">[email&#160;protected]</span></a></li>
+        <li><a href="mailto:CleaningSuOficina@gmail.com">CleaningSuOficina@gmail.com</a></li>
         <li><a href="https://c-su-oficina.vercel.app/">Get a Quote</a></li>
         <li><a href="https://cleaningsucasa.com/jobs.html" target="_blank">Job Openings</a></li>
       </ul>
@@ -325,7 +325,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 (function(){
   if('scrollRestoration' in history){ history.scrollRestoration = 'manual'; }
   window.scrollTo(0,0);
@@ -360,4 +360,15 @@
     a.addEventListener('click', function(e){
       var target = document.querySelector(this.getAttribute('href'));
       if(target){
-        
+        setTimeout(function(){ target.scrollIntoView({behavior:'smooth'}); }, 50);
+      }
+    });
+  });
+  window.addEventListener('scroll', function(){
+    var nav = document.querySelector('nav');
+    if(nav) nav.style.boxShadow = window.scrollY > 50 ? '0 4px 30px rgba(0,0,0,0.10)' : 'none';
+  });
+})();
+</script>
+</body>
+</html>
