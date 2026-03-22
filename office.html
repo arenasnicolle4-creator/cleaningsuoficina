@@ -32,7 +32,7 @@
     .nav-links>li>a:hover,.nav-links>li>button:hover,.nav-links>li.open>a,.nav-links>li.open>button{color:var(--steel-mid);background:var(--off-white)}
     .nav-chevron{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:transform 0.25s;flex-shrink:0}
     .nav-links>li.open .nav-chevron{transform:rotate(180deg)}
-    .nav-dropdown{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:white;border:1px solid rgba(212,160,23,0.15);border-radius:16px;padding:0.45rem;box-shadow:0 16px 48px 0 14px 36px rgba(212,160,23,0.16);min-width:240px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.2s ease,transform 0.2s ease,visibility 0.2s;z-index:300}
+    .nav-dropdown{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:white;border:1px solid rgba(212,160,23,0.15);border-radius:16px;padding:0.45rem;box-shadow:0 16px 48px rgba(62,56,48,0.14);min-width:240px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.2s ease,transform 0.2s ease,visibility 0.2s;z-index:300}
     .nav-links>li.open .nav-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
     .nav-dropdown::before{content:'';position:absolute;top:-6px;left:50%;width:12px;height:12px;background:white;border-left:1px solid rgba(212,160,23,0.15);border-top:1px solid rgba(212,160,23,0.15);transform:translateX(-50%) rotate(45deg);border-radius:2px 0 0 0}
     .nav-dropdown a{display:flex;align-items:center;gap:0.7rem;padding:0.7rem 0.9rem;border-radius:10px;text-decoration:none;color:var(--text-mid);font-size:0.84rem;font-weight:500;transition:background 0.18s,color 0.18s}
@@ -170,18 +170,18 @@
     <li id="navServices">
       <button data-toggle="navServices" aria-expanded="false">Services <svg class="nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="nav-dropdown">
-        <a href="https://home.cleaningsuoficina.comoffice"><span class="dd-icon">&#127970;</span><span><span class="dd-title">Office Buildings</span><span class="dd-sub">Corporate, law &amp; co-working</span></span></a>
-        <a href="https://home.cleaningsuoficina.comhospitality"><span class="dd-icon">&#127976;</span><span><span class="dd-title">Hospitality</span><span class="dd-sub">Hotels, apartments &amp; venues</span></span></a>
-        <a href="https://home.cleaningsuoficina.comretail"><span class="dd-icon">&#127914;</span><span><span class="dd-title">Retail</span><span class="dd-sub">Stores, gyms &amp; salons</span></span></a>
-        <a href="https://home.cleaningsuoficina.comhealthcare"><span class="dd-icon">&#127973;</span><span><span class="dd-title">Healthcare</span><span class="dd-sub">Clinics, dental &amp; medical offices</span></span></a>
-        <a href="https://home.cleaningsuoficina.comindustrial"><span class="dd-icon">&#127981;</span><span><span class="dd-title">Industrial</span><span class="dd-sub">Warehouses &amp; facilities</span></span></a>
+        <a href="https://office.cleaningsuoficina.com"><span class="dd-icon">&#127970;</span><span><span class="dd-title">Office Buildings</span><span class="dd-sub">Corporate, law &amp; co-working</span></span></a>
+        <a href="https://hospitality.cleaningsuoficina.com"><span class="dd-icon">&#127976;</span><span><span class="dd-title">Hospitality</span><span class="dd-sub">Hotels, apartments &amp; venues</span></span></a>
+        <a href="https://retail.cleaningsuoficina.com"><span class="dd-icon">&#127914;</span><span><span class="dd-title">Retail</span><span class="dd-sub">Stores, gyms &amp; salons</span></span></a>
+        <a href="https://healthcare.cleaningsuoficina.com"><span class="dd-icon">&#127973;</span><span><span class="dd-title">Healthcare</span><span class="dd-sub">Clinics, dental &amp; medical offices</span></span></a>
+        <a href="https://industrial.cleaningsuoficina.com"><span class="dd-icon">&#127981;</span><span><span class="dd-title">Industrial</span><span class="dd-sub">Warehouses &amp; facilities</span></span></a>
       </div>
     </li>
     <li><a href="https://book.cleaningsuoficina.com">Get a Quote</a></li>
     <li id="navMore">
       <button data-toggle="navMore" aria-expanded="false">More <svg class="nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="nav-dropdown">
-        <a href="/cdn-cgi/l/email-protection#6c2f00090d0205020b3f19230a050f05020d2c0b010d0500420f0301"><span class="__cf_email__" data-cfemail="a6e5cac3c7c8cfc8c1f5d3e9c0cfc5cfc8c7e6c1cbc7cfca88c5c9cb">[email&#160;protected]</span></a>
+        <a href="mailto:CleaningSuOficina@gmail.com">CleaningSuOficina@gmail.com</a>
         <div class="dd-divider"></div>
         <a href="https://cleaningsucasa.com" target="_blank"><span class="dd-icon">&#127969;</span><span><span class="dd-title">Cleaning Su Casa</span><span class="dd-sub">Residential &amp; Airbnb cleaning</span></span></a>
       </div>
@@ -192,13 +192,13 @@
 </nav>
 <div class="nav-mobile" id="mobileMenu">
   <div class="mob-section">Services</div>
-  <a href="https://home.cleaningsuoficina.comoffice" class="mob-indent">&#127970; &nbsp;Office Buildings</a>
-  <a href="https://home.cleaningsuoficina.comhospitality" class="mob-indent">&#127976; &nbsp;Hospitality</a>
-  <a href="https://home.cleaningsuoficina.comretail" class="mob-indent">&#127914; &nbsp;Retail</a>
-  <a href="https://home.cleaningsuoficina.comhealthcare" class="mob-indent">&#127973; &nbsp;Healthcare</a>
-  <a href="https://home.cleaningsuoficina.comindustrial" class="mob-indent">&#127981; &nbsp;Industrial</a>
+  <a href="https://office.cleaningsuoficina.com" class="mob-indent">&#127970; &nbsp;Office Buildings</a>
+  <a href="https://hospitality.cleaningsuoficina.com" class="mob-indent">&#127976; &nbsp;Hospitality</a>
+  <a href="https://retail.cleaningsuoficina.com" class="mob-indent">&#127914; &nbsp;Retail</a>
+  <a href="https://healthcare.cleaningsuoficina.com" class="mob-indent">&#127973; &nbsp;Healthcare</a>
+  <a href="https://industrial.cleaningsuoficina.com" class="mob-indent">&#127981; &nbsp;Industrial</a>
   <a href="https://book.cleaningsuoficina.com">Get a Quote</a>
-  <a href="/cdn-cgi/l/email-protection#1a59767f7b7473747d496f557c737973747b5a7d777b737634797577"><span class="__cf_email__" data-cfemail="35765950545b5c5b5266407a535c565c5b54755258545c591b565a58">[email&#160;protected]</span></a>
+  <a href="mailto:CleaningSuOficina@gmail.com">CleaningSuOficina@gmail.com</a>
   <div class="mob-section">Our Family</div>
   <a href="https://cleaningsucasa.com" class="mob-indent" target="_blank">&#127969; &nbsp;Cleaning Su Casa</a>
   <a href="https://book.cleaningsuoficina.com" class="mob-cta">Get a Commercial Quote</a>
@@ -273,8 +273,8 @@
       <p class="footer-tagline">Anchorage&#8217;s commercial cleaning specialists since 2020.</p>
     </div>
     <div class="footer-col"><h4>Services</h4><ul>
-      <li><a href="https://home.cleaningsuoficina.comoffice">Office Buildings</a></li><li><a href="https://home.cleaningsuoficina.comhospitality">Hospitality</a></li>
-      <li><a href="https://home.cleaningsuoficina.comretail">Retail</a></li><li><a href="https://home.cleaningsuoficina.comhealthcare">Healthcare</a></li><li><a href="https://home.cleaningsuoficina.comindustrial">Industrial</a></li>
+      <li><a href="https://office.cleaningsuoficina.com">Office Buildings</a></li><li><a href="https://hospitality.cleaningsuoficina.com">Hospitality</a></li>
+      <li><a href="https://retail.cleaningsuoficina.com">Retail</a></li><li><a href="https://healthcare.cleaningsuoficina.com">Healthcare</a></li><li><a href="https://industrial.cleaningsuoficina.com">Industrial</a></li>
     </ul></div>
     <div class="footer-col"><h4>Our Family</h4><ul>
       <li><a href="https://cleaningsucasa.com" target="_blank">Cleaning Su Casa</a></li>
@@ -283,7 +283,7 @@
       <li><a href="https://cleaningsucasa.com/about.html" target="_blank">About Us</a></li>
     </ul></div>
     <div class="footer-col"><h4>Contact</h4><ul>
-      <li><a href="/cdn-cgi/l/email-protection#084b646d696661666f5b7d476e616b616669486f65696164266b6765"><span class="__cf_email__" data-cfemail="f6b59a9397989f9891a583b9909f959f9897b6919b979f9ad895999b">[email&#160;protected]</span></a></li>
+      <li><a href="mailto:CleaningSuOficina@gmail.com">CleaningSuOficina@gmail.com</a></li>
       <li><a href="https://book.cleaningsuoficina.com">Get a Quote</a></li>
       <li><a href="https://cleaningsucasa.com/jobs.html" target="_blank">Job Openings</a></li>
     </ul></div>
@@ -293,7 +293,7 @@
     <span>Made with care in Anchorage, AK &#128153;</span>
   </div>
 </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 (function(){
   if('scrollRestoration' in history){ history.scrollRestoration = 'manual'; }
   window.scrollTo(0,0);
@@ -329,4 +329,19 @@
       var target = document.querySelector(this.getAttribute('href'));
       if(target){
         e.preventDefault();
-        var menu = document.getE
+        var menu = document.getElementById('mobileMenu');
+        if(menu) menu.classList.remove('open');
+        var bars = document.querySelectorAll('.nav-hamburger span');
+        bars.forEach(function(b){ b.style.transform = ''; b.style.opacity = ''; });
+        setTimeout(function(){ target.scrollIntoView({behavior:'smooth'}); }, 50);
+      }
+    });
+  });
+  window.addEventListener('scroll', function(){
+    var nav = document.querySelector('nav');
+    if(nav) nav.style.boxShadow = window.scrollY > 50 ? '0 4px 30px rgba(0,0,0,0.12)' : 'none';
+  });
+})();
+</script>
+</body>
+</html>
