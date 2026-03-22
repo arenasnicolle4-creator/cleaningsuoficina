@@ -1,0 +1,34 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "home.cleaningsuoficina.com" }],
+      "destination": "/oficina_index.html"
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "office.cleaningsuoficina.com" }],
+      "destination": "/office.html"
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "hospitality.cleaningsuoficina.com" }],
+      "destination": "/hospitality.html"
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "retail.cleaningsuoficina.com" }],
+      "destination": "/retail.html"
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "healthcare.cleaningsuoficina.com" }],
+      "destination": "/healthcare.html"
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "industrial.cleaningsuoficina.com" }],
+      "destination": "/industrial.html"
+    }
+  ]
+}
