@@ -55,7 +55,7 @@
     .mob-section{font-size:0.68rem!important;font-weight:700!important;letter-spacing:0.12em!important;text-transform:uppercase;color:var(--text-faint)!important;padding:1rem 1rem 0.3rem!important}
     .mob-indent{padding-left:2.2rem!important}
     .mob-cta{background:linear-gradient(135deg,#E8E0C8 0%,#7A6A5A 40%,#4A3E34 75%,#3E3830 100%)!important;color:#F5E8C0!important;text-align:center!important;border-radius:50px!important;margin-top:1rem;font-weight:600!important}
-    @media(max-width:860px){.nav-links,.nav-cta{display:none}.nav-hamburger{display:flex}}
+    @media(max-width:860px){.nav-links{display:none}.nav-hamburger{display:flex}}
     .glow-text{text-shadow:0 0 18px rgba(255,255,255,0.95),0 0 40px rgba(255,240,160,0.35),0 0 80px rgba(212,160,23,0.18)}
     .hero{min-height:100vh;display:grid;grid-template-columns:58% 42%;padding-top:72px;overflow:hidden}
     .hero-left{display:flex;flex-direction:column;justify-content:center;padding:5rem 4rem 5rem 5.5rem;background-color:#2D2520;background-image:radial-gradient(circle at 20% 30%,rgba(78,72,64,0.75) 0%,transparent 45%),radial-gradient(circle at 80% 68%,rgba(62,56,48,0.55) 0%,transparent 40%),radial-gradient(circle at 55% 8%,rgba(212,160,23,0.10) 0%,transparent 30%),radial-gradient(ellipse at 5% 88%,rgba(45,37,32,0.6) 0%,transparent 40%),radial-gradient(circle 1px at center,rgba(255,255,255,0.04) 0%,transparent 100%);background-size:100% 100%,100% 100%,100% 100%,100% 100%,26px 26px;position:relative;overflow:hidden}
@@ -176,7 +176,7 @@
     .price-features{list-style:none;display:flex;flex-direction:column;gap:0.75rem;margin-bottom:2.4rem}
     .price-features li{font-size:0.9rem;display:flex;align-items:flex-start;gap:0.65rem;color:var(--text-mid);line-height:1.5}
     .price-features li::before{content:'\2713';color:var(--copper);font-weight:700;font-size:0.78rem;flex-shrink:0;margin-top:2px}
-    .btn-price{display:block;text-align:center;padding:1rem;border-radius:50px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:all 0.25s;border:2px solid var(--steel);color:var(--steel)}
+    .btn-price{display:block;text-align:center;padding:1rem;border-radius:50px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:all 0.25s;border:2px solid var(--steel);color:var(--steel);position:relative;overflow:hidden}
     .btn-price:hover{background:var(--steel);color:white}
     .services{padding:7rem 5.5rem;background:var(--white)}
     .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
@@ -299,9 +299,9 @@
     .footer-bottom{display:flex;justify-content:space-between;align-items:center;font-size:0.78rem;color:rgba(255,255,255,0.24)}
     .fade-up{opacity:1;transform:translateY(0);transition:opacity 0.6s ease,transform 0.6s ease}
     .fade-up.visible{opacity:1;transform:translateY(0)}
-    @media(max-width:1100px){.hero{grid-template-columns:1fr}.hero-right{display:none}.hero-left{padding:6rem 3rem 5rem;min-height:80vh}.process-steps{grid-template-columns:repeat(3,1fr)}}
-    @media(max-width:1000px){.pricing,.services,.about,.process,.testimonials,.cta-band{padding:5rem 2rem}.about{grid-template-columns:1fr}.pricing-grid,.services-grid{grid-template-columns:1fr 1fr}.footer-top{grid-template-columns:1fr 1fr;gap:2rem}}
-    @media(max-width:640px){.hero-left{padding:5.5rem 1.4rem 4rem}.hero-sub{font-size:0.92rem}.hero-actions{flex-direction:column;gap:0.8rem}.hero-actions a{text-align:center}.hero-stats{gap:1.5rem}.pricing-grid,.services-grid{grid-template-columns:1fr}.about-visual-panel{grid-template-columns:1fr}.avp-card:nth-child(1),.avp-card:nth-child(4){grid-column:span 1;flex-direction:column;align-items:flex-start}.process-steps{grid-template-columns:1fr 1fr}.testimonial-card{width:280px;padding:1.6rem}.section-title{font-size:1.75rem}.cta-band{grid-template-columns:1fr}.cta-actions{align-items:flex-start}.footer-top{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:0.5rem;text-align:center}.pricing,.services,.about,.process,.testimonials,.cta-band{padding:3.5rem 1.2rem}}
+    
+    
+    
   
     a.service-card{color:inherit;display:block;}
     a.service-card:hover{color:inherit;}
@@ -342,6 +342,82 @@
     }
 
     .btn-primary::after,.btn-cta::after,.price-card-hospitality .btn-price::after{content:none}
+  
+    @media(max-width:900px){
+      nav{padding:0 1.2rem;}
+      .nav-links{display:none}
+      .nav-hamburger{display:flex;}
+      .hero{grid-template-columns:1fr;min-height:auto;}
+      .hero-left{padding:6rem 1.6rem 3.5rem;min-height:auto;}
+      .hero-right{display:none;}
+      .hero-title div:first-child{font-size:clamp(3rem,10vw,4.5rem)!important;letter-spacing:6px!important;}
+      .hero-title div:nth-child(2){font-size:clamp(3.4rem,12vw,5rem)!important;}
+      .hero-sub{font-size:0.96rem;max-width:100%;}
+      .hero-actions{flex-direction:column;gap:0.8rem;}
+      .hero-actions a{text-align:center;}
+      .hero-stats{gap:1.8rem;flex-wrap:wrap;}
+      .pricing,.services,.about,.process,.testimonials,.cta-band{padding:4rem 1.6rem;}
+      .pricing-grid,.services-grid{grid-template-columns:1fr 1fr;}
+      .about{grid-template-columns:1fr;gap:3rem;}
+      .about-visual-panel{order:2;}
+      .about-content{order:1;}
+      .process-steps{grid-template-columns:repeat(3,1fr);}
+      .cta-band{grid-template-columns:1fr;}
+      .cta-actions{align-items:flex-start;}
+      .footer-top{grid-template-columns:1fr 1fr;gap:2rem;}
+    }
+    @media(max-width:640px){
+      .hero-left{padding:5.5rem 1.2rem 3rem;}
+      .hero-title div:first-child{font-size:clamp(2.6rem,13vw,3.8rem)!important;letter-spacing:4px!important;}
+      .hero-title div:nth-child(2){font-size:clamp(3rem,15vw,4.5rem)!important;}
+      .hero-sub{font-size:0.9rem;}
+      .hero-stats{gap:1.2rem;}
+      .stat-num{font-size:1.8rem;}
+      .pricing,.services,.about,.process,.testimonials,.cta-band{padding:3.5rem 1.2rem;}
+      .pricing-grid,.services-grid{grid-template-columns:1fr;}
+      .about-visual-panel{grid-template-columns:1fr;}
+      .avp-card:nth-child(1){flex-direction:column;align-items:flex-start;}
+      .avp-card:nth-child(4){grid-column:span 1;}
+      .process-steps{grid-template-columns:1fr 1fr;}
+      .testimonial-card{width:280px;padding:1.6rem;}
+      .section-title{font-size:1.75rem;}
+      .cta-band{grid-template-columns:1fr;}
+      .cta-actions{align-items:flex-start;width:100%;}
+      .cta-actions a{width:100%;text-align:center;}
+      .footer-top{grid-template-columns:1fr;}
+      .footer-bottom{flex-direction:column;gap:0.5rem;text-align:center;}
+    }
+    @media(max-width:480px){
+      .hero-left{padding:5rem 1.2rem 2.5rem;}
+      .process-steps{grid-template-columns:1fr;}
+      .section-header{flex-direction:column;align-items:flex-start;gap:1rem;}
+    }
+  
+    /* Price card button rings - explicit per card */
+    .price-card-hospitality .btn-price::before{
+      content:'';position:absolute;
+      width:90px;height:90px;border-radius:50%;
+      border:1.5px solid rgba(45,24,0,0.28);
+      top:-30px;left:-20px;pointer-events:none;
+      box-shadow:0 0 0 18px rgba(45,24,0,0.10),0 0 0 36px rgba(45,24,0,0.05);
+    }
+    .price-card-hospitality .btn-price::after{content:none}
+    .price-card-office .btn-price::before{
+      content:'';position:absolute;
+      width:90px;height:90px;border-radius:50%;
+      border:1.5px solid rgba(255,240,180,0.40);
+      top:-30px;left:-20px;pointer-events:none;
+      box-shadow:0 0 0 18px rgba(255,240,180,0.12),0 0 0 36px rgba(255,240,180,0.05);
+    }
+    .price-card-office .btn-price::after{content:none}
+    .price-card-healthcare .btn-price::before{
+      content:'';position:absolute;
+      width:90px;height:90px;border-radius:50%;
+      border:1.5px solid rgba(255,240,180,0.40);
+      top:-30px;left:-20px;pointer-events:none;
+      box-shadow:0 0 0 18px rgba(255,240,180,0.12),0 0 0 36px rgba(255,240,180,0.05);
+    }
+    .price-card-healthcare .btn-price::after{content:none}
   </style>
 </head>
 <body>
@@ -367,7 +443,7 @@
         <a href="#about"><span class="dd-icon">&#10024;</span><span><span class="dd-title">Who We Are</span><span class="dd-sub">Our story &amp; mission</span></span></a>
         <a href="mailto:CleaningSuOficina@gmail.com">CleaningSuOficina@gmail.com</a>
         <div class="dd-divider"></div>
-        <a href="https://cleaningsucasa.com" target="_blank"><span class="dd-icon">&#127969;</span><span><span class="dd-title">Cleaning Su Casa</span><span class="dd-sub">Residential &amp; Airbnb cleaning</span></span></a>
+        <a href="https://home.cleaningsucasa.com" target="_blank"><span class="dd-icon">&#127969;</span><span><span class="dd-title">Cleaning Su Casa</span><span class="dd-sub">Residential &amp; Airbnb cleaning</span></span></a>
       </div>
     </li>
   </ul>
@@ -385,7 +461,7 @@
   <a href="#about">Who We Are</a>
   <a href="mailto:CleaningSuOficina@gmail.com">CleaningSuOficina@gmail.com</a>
   <div class="mob-section">Our Family</div>
-  <a href="https://cleaningsucasa.com" class="mob-indent" target="_blank">&#127969; &nbsp;Cleaning Su Casa</a>
+  <a href="https://home.cleaningsucasa.com" class="mob-indent" target="_blank">&#127969; &nbsp;Cleaning Su Casa</a>
   <a href="https://book.cleaningsuoficina.com" class="mob-cta btn-decorated">Get a Commercial Quote</a>
 </div>
 
@@ -551,7 +627,7 @@
         <li>Dedicated recurring team</li>
         <li>After-hours scheduling available</li>
       </ul>
-      <a href="https://book.cleaningsuoficina.com" class="btn-price">Get My Price Now</a>
+      <a href="https://book.cleaningsuoficina.com" class="btn-price btn-decorated">Get My Price Now</a>
     </div>
     <div class="price-card price-card-office">
       <div class="price-badge" style="background:var(--steel);color:white;">&#127976; Hospitality</div>
@@ -587,7 +663,7 @@
   <div style="text-align:center;margin-top:2.5rem;padding:1.8rem 2rem;background:white;border-radius:18px;border:1.5px solid rgba(212,160,23,0.18);max-width:680px;margin-left:auto;margin-right:auto;">
     <p style="font-size:1rem;font-weight:600;color:var(--steel);margin-bottom:0.4rem;">These are just a few of the industries we serve.</p>
     <p style="font-size:0.88rem;color:var(--text-soft);line-height:1.7;margin-bottom:1.2rem;">We clean retail stores, restaurants, schools, religious facilities, government buildings, gyms, salons, warehouses, and more &#8212; if it needs cleaning, we can do it. <a href="https://book.cleaningsuoficina.com" style="color:var(--copper);font-weight:600;text-decoration:none;">Contact us for a custom quote &#8594;</a></p>
-    <p style="font-size:0.82rem;color:var(--text-faint);">Also offer residential &amp; Airbnb cleaning? <a href="https://cleaningsucasa.com" target="_blank" style="color:var(--steel-mid);font-weight:600;text-decoration:none;">Visit Cleaning Su Casa &#8599;</a></p>
+    <p style="font-size:0.82rem;color:var(--text-faint);">Also offer residential &amp; Airbnb cleaning? <a href="https://home.cleaningsucasa.com" target="_blank" style="color:var(--steel-mid);font-weight:600;text-decoration:none;">Visit Cleaning Su Casa &#8599;</a></p>
   </div>
 </section>
 
@@ -782,10 +858,10 @@
     <div class="footer-col">
       <h4>Our Family</h4>
       <ul>
-        <li><a href="https://cleaningsucasa.com" target="_blank">Cleaning Su Casa</a></li>
-        <li><a href="https://cleaningsucasa.com/airbnb.html" target="_blank">Airbnb Cleaning</a></li>
-        <li><a href="https://cleaningsucasa.com/residential.html" target="_blank">Residential Cleaning</a></li>
-        <li><a href="https://cleaningsucasa.com/about.html" target="_blank">About Us</a></li>
+        <li><a href="https://home.cleaningsucasa.com" target="_blank">Cleaning Su Casa</a></li>
+        <li><a href="https://airbnb.cleaningsucasa.com" target="_blank">Airbnb Cleaning</a></li>
+        <li><a href="https://residential.cleaningsucasa.com" target="_blank">Residential Cleaning</a></li>
+        <li><a href="https://about.cleaningsucasa.com" target="_blank">About Us</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -793,7 +869,7 @@
       <ul>
         <li><a href="mailto:CleaningSuOficina@gmail.com">CleaningSuOficina@gmail.com</a></li>
         <li><a href="https://book.cleaningsuoficina.com">Book Online</a></li>
-        <li><a href="https://cleaningsucasa.com/jobs.html" target="_blank">Job Openings</a></li>
+        <li><a href="https://jobs.cleaningsucasa.com" target="_blank">Job Openings</a></li>
       </ul>
     </div>
   </div>
@@ -802,7 +878,6 @@
     <span>Made with care in Anchorage, AK &#128153;</span>
   </div>
 </footer>
-
 <script>
 (function(){
   if('scrollRestoration' in history){ history.scrollRestoration = 'manual'; }
@@ -840,18 +915,25 @@
       if(target){
         e.preventDefault();
         var menu = document.getElementById('mobileMenu');
-        if(menu) menu.classList.remove('open');
-        var bars = document.querySelectorAll('.nav-hamburger span');
-        bars.forEach(function(b){ b.style.transform = ''; b.style.opacity = ''; });
-        setTimeout(function(){ target.scrollIntoView({behavior:'smooth'}); }, 50);
+        if(menu && menu.classList.contains('open')){ menu.classList.remove('open'); }
+        setTimeout(function(){ target.scrollIntoView({behavior:'smooth',block:'start'}); }, 100);
       }
     });
   });
+  var fadeEls = document.querySelectorAll('.fade-up');
+  if('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('visible'); obs.unobserve(en.target); }
+      });
+    },{threshold:0.12});
+    fadeEls.forEach(function(el){ obs.observe(el); });
+  } else {
+    fadeEls.forEach(function(el){ el.classList.add('visible'); });
+  }
   window.addEventListener('scroll', function(){
-    var nav = document.querySelector('nav');
-    if(nav) nav.style.boxShadow = window.scrollY > 50 ? '0 4px 30px rgba(0,0,0,0.12)' : 'none';
+    var nav = document.getElementById('mainNav');
+    if(nav) nav.style.boxShadow = window.scrollY > 50 ? '0 4px 30px rgba(26,37,47,0.12)' : 'none';
   });
 })();
-</script>
-</body>
-</html>
+</script></body></html>
