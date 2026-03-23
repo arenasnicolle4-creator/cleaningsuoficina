@@ -238,8 +238,8 @@
     .step:hover .step-num{background:#D4A017;border-color:#D4A017;color:#2D2520;box-shadow:0 0 30px rgba(212,160,23,0.40)}
     .step-title{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;margin-bottom:0.7rem;color:white}
     .step-bullets{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.38rem}
-    .step-bullets li{font-size:0.8rem;color:rgba(255,255,255,0.62);padding-left:1.1rem;position:relative;line-height:1.5}
-    .step-bullets li::before{content:'\2192';position:absolute;left:0;color:#F0C040;font-size:0.78rem;top:0.05rem;opacity:1;font-weight:700;text-shadow:0 0 8px rgba(240,192,64,0.9),0 0 16px rgba(212,160,23,0.6),0 0 28px rgba(184,115,51,0.35)}
+    .step-bullets li{font-size:0.8rem;color:#F0C040;padding-left:1.1rem;position:relative;line-height:1.5;text-shadow:0 0 10px rgba(240,192,64,0.55),0 0 22px rgba(212,160,23,0.30),0 0 40px rgba(184,115,51,0.15)}
+    .step-bullets li::before{content:'\2192';position:absolute;left:0;color:rgba(255,255,255,0.45);font-size:0.72rem;top:0.05rem;opacity:1}
     .testimonials{padding:7rem 5.5rem;background:var(--white)}
     .testimonial-grid{overflow:hidden;margin-top:3rem;position:relative}
     .testimonial-grid::before,.testimonial-grid::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
@@ -388,9 +388,12 @@
       .stat-num{font-size:1.8rem;}
       .pricing,.services,.about,.process,.testimonials,.cta-band{padding:3.5rem 1.2rem;}
       .pricing-grid,.services-grid{grid-template-columns:1fr;}
-      .about-visual-panel{grid-template-columns:1fr;}
-      .avp-card:nth-child(1){flex-direction:column;align-items:flex-start;}
-      .avp-card:nth-child(4){grid-column:span 1;}
+      .about-visual-panel{grid-template-columns:1fr 1fr;}
+      .avp-card:nth-child(1){flex-direction:column;align-items:flex-start;gap:1rem;}
+      .avp-card:nth-child(1) .avp-card-wide-right{flex-direction:row;flex-wrap:wrap;gap:0.5rem;}
+      .avp-card:nth-child(4){grid-column:span 2;}
+      .avp-num{font-size:2rem;}
+      .avp-card{padding:1.5rem 1.2rem;}
       .process-steps{grid-template-columns:1fr 1fr;}
       .testimonial-card{width:280px;padding:1.6rem;}
       .section-title{font-size:1.75rem;}
