@@ -54,7 +54,7 @@
     .nav-mobile a:hover,.nav-mobile button:hover{background:var(--light-steel);color:var(--steel)}
     .mob-section{font-size:0.68rem!important;font-weight:700!important;letter-spacing:0.12em!important;text-transform:uppercase;color:var(--text-faint)!important;padding:1rem 1rem 0.3rem!important}
     .mob-indent{padding-left:2.2rem!important}
-    .mob-cta{background:linear-gradient(135deg,#E8E0C8 0%,#7A6A5A 40%,#4A3E34 75%,#3E3830 100%)!important;color:#F5E8C0!important;text-align:center!important;border-radius:50px!important;margin-top:1rem;font-weight:600!important}
+    .mob-cta{background:linear-gradient(90deg,#FFF0A0 0%,#F0C040 25%,#C8900A 50%,#F0C040 75%,#FFF0A0 100%) !important;color:#2D1800 !important;text-align:center !important;border-radius:50px !important;margin-top:1rem;font-weight:600 !important}
     @media(max-width:860px){.nav-links{display:none}.nav-hamburger{display:flex}}
     .glow-text{text-shadow:0 0 18px rgba(255,255,255,0.95),0 0 40px rgba(255,240,160,0.35),0 0 80px rgba(212,160,23,0.18)}
     .hero{min-height:100vh;display:grid;grid-template-columns:58% 42%;padding-top:72px;overflow:hidden}
@@ -418,6 +418,11 @@
       box-shadow:0 0 0 18px rgba(255,240,180,0.12),0 0 0 36px rgba(255,240,180,0.05);
     }
     .price-card-healthcare .btn-price::after{content:none}
+      .nav-cta{background:linear-gradient(90deg,#FFF0A0 0%,#F0C040 25%,#C8900A 50%,#F0C040 75%,#FFF0A0 100%) !important;color:#2D1800 !important;box-shadow:0 4px 18px rgba(184,115,51,0.40) !important;position:relative;overflow:hidden}
+    .nav-cta:hover{box-shadow:0 4px 18px rgba(184,115,51,0.60) !important;transform:translateY(-1px)}
+    .nav-cta::before{content:'';position:absolute;width:60px;height:60px;border-radius:50%;border:1.5px solid rgba(45,24,0,0.28);top:-22px;left:-16px;pointer-events:none;box-shadow:0 0 0 14px rgba(45,24,0,0.10),0 0 0 28px rgba(45,24,0,0.05)}
+    .nav-cta::after{content:none}
+      .mob-cta{background:linear-gradient(90deg,#FFF0A0 0%,#F0C040 25%,#C8900A 50%,#F0C040 75%,#FFF0A0 100%) !important;color:#2D1800 !important;text-align:center !important;border-radius:50px !important;margin-top:1rem;font-weight:600 !important}
   </style>
 </head>
 <body>
@@ -451,6 +456,7 @@
   <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="nav-mobile" id="mobileMenu">
+  <a href="javascript:void(0)" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#127968; &nbsp;Home</a>
   <div class="mob-section">Services</div>
   <a href="https://office.cleaningsuoficina.com" class="mob-indent">&#127970; &nbsp;Office Buildings</a>
   <a href="https://hospitality.cleaningsuoficina.com" class="mob-indent">&#127976; &nbsp;Hospitality</a>
