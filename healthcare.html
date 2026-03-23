@@ -45,8 +45,8 @@
     .nav-mobile a:hover{background:var(--off-white);color:var(--accent-dark)}
     .mob-section{font-size:0.68rem!important;font-weight:700!important;letter-spacing:0.12em!important;text-transform:uppercase;color:var(--text-faint)!important;padding:1rem 1rem 0.3rem!important}
     .mob-indent{padding-left:2.2rem!important}
-    .mob-cta{background:linear-gradient(135deg,#E8E0C8 0%,#7A6A5A 40%,#4A3E34 75%,#3E3830 100%)!important;color:#F5E8C0!important;text-align:center!important;border-radius:50px!important;margin-top:1rem;font-weight:600!important}
-    @media(max-width:860px){.nav-links,.nav-cta{display:none}.nav-hamburger{display:flex}}
+    .mob-cta{background:linear-gradient(135deg,#155d8c 0%,#1e6fa0 60%,#4da8d8 100%) !important;color:white !important;text-align:center !important;border-radius:50px !important;margin-top:1rem;font-weight:600 !important}
+    @media(max-width:860px){.nav-links{display:none}.nav-hamburger{display:flex}}
     .hero{min-height:88vh;display:flex;align-items:center;padding:9rem 5.5rem 6rem;background-color:#030a12;background-image:radial-gradient(circle at 18% 28%,rgba(30,111,160,0.65) 0%,transparent 45%),radial-gradient(circle at 80% 68%,rgba(21,93,140,0.45) 0%,transparent 40%),radial-gradient(circle at 55% 8%,rgba(77,168,216,0.07) 0%,transparent 30%),radial-gradient(ellipse at 4% 88%,rgba(30,111,160,0.65) 0%,transparent 40%),radial-gradient(circle 1px at center,rgba(255,255,255,0.05) 0%,transparent 100%);background-size:100% 100%,100% 100%,100% 100%,100% 100%,26px 26px;position:relative;overflow:hidden}
     .hero-orb{position:absolute;border-radius:50%;pointer-events:none}
     .hero-orb-1{width:600px;height:600px;top:50%;left:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(30,111,160,0.22) 0%,transparent 70%);animation:porb 7s ease-in-out infinite}
@@ -157,6 +157,31 @@
     .btn-accent{position:relative;overflow:hidden}
     .btn-accent::before{content:'';position:absolute;width:90px;height:90px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.60);top:-30px;left:-20px;pointer-events:none;box-shadow:0 0 0 18px rgba(255,255,255,0.20),0 0 0 36px rgba(255,255,255,0.08)}
     .btn-accent::after{content:none}
+  
+    @media(max-width:480px){
+      .hero{padding:6rem 1.2rem 3rem}
+      .hero h1{font-size:clamp(2.2rem,12vw,3.4rem)!important;line-height:1.08}
+      .hero-sub{font-size:0.9rem;margin-bottom:2rem}
+      .hero-actions{flex-direction:column;gap:0.75rem}
+      .hero-actions a{text-align:center;width:100%}
+      .hero-pills{gap:0.35rem}
+      .hero-pill{font-size:0.7rem;padding:0.32rem 0.7rem}
+      .offer-intro,.services-section,.full-list,.cta-band,.why-us{padding:3.5rem 1.2rem}
+      .services-grid{grid-template-columns:1fr}
+      .section-header{flex-direction:column;align-items:flex-start;gap:1rem}
+      .section-title{font-size:1.6rem}
+      .cta-band{flex-direction:column;gap:2rem}
+      .cta-actions{align-items:flex-start;width:100%}
+      .cta-actions a{width:100%;text-align:center}
+      footer{padding:3rem 1.2rem 1.5rem}
+      .footer-grid{grid-template-columns:1fr;gap:2rem}
+      .footer-bottom{flex-direction:column;gap:0.5rem;text-align:center}
+    }
+      .nav-cta{background:linear-gradient(135deg,#155d8c 0%,#1e6fa0 60%,#4da8d8 100%) !important;color:white !important;box-shadow:0 4px 18px rgba(21,93,140,0.42) !important;position:relative;overflow:hidden}
+    .nav-cta:hover{box-shadow:0 4px 18px rgba(21,93,140,0.60) !important;transform:translateY(-1px)}
+    .nav-cta::before{content:'';position:absolute;width:60px;height:60px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.40);top:-22px;left:-16px;pointer-events:none;box-shadow:0 0 0 14px rgba(255,255,255,0.12),0 0 0 28px rgba(255,255,255,0.05)}
+    .nav-cta::after{content:none}
+      .mob-cta{background:linear-gradient(135deg,#155d8c 0%,#1e6fa0 60%,#4da8d8 100%) !important;color:white !important;text-align:center !important;border-radius:50px !important;margin-top:1rem;font-weight:600 !important}
   </style>
 </head>
 <body>
@@ -179,7 +204,7 @@
       <div class="nav-dropdown">
         <a href="mailto:CleaningSuOficina@gmail.com">CleaningSuOficina@gmail.com</a>
         <div class="dd-divider"></div>
-        <a href="https://cleaningsucasa.com" target="_blank"><span class="dd-icon">&#127969;</span><span><span class="dd-title">Cleaning Su Casa</span><span class="dd-sub">Residential &amp; Airbnb cleaning</span></span></a>
+        <a href="https://home.cleaningsucasa.com" target="_blank"><span class="dd-icon">&#127969;</span><span><span class="dd-title">Cleaning Su Casa</span><span class="dd-sub">Residential &amp; Airbnb cleaning</span></span></a>
       </div>
     </li>
   </ul>
@@ -196,7 +221,7 @@
   <a href="https://book.cleaningsuoficina.com">Get a Quote</a>
   <a href="mailto:CleaningSuOficina@gmail.com">CleaningSuOficina@gmail.com</a>
   <div class="mob-section">Our Family</div>
-  <a href="https://cleaningsucasa.com" class="mob-indent" target="_blank">&#127969; &nbsp;Cleaning Su Casa</a>
+  <a href="https://home.cleaningsucasa.com" class="mob-indent" target="_blank">&#127969; &nbsp;Cleaning Su Casa</a>
   <a href="https://book.cleaningsuoficina.com" class="mob-cta">Get a Commercial Quote</a>
 </div>
 
@@ -312,10 +337,10 @@
     <div class="footer-col">
       <h4>Our Family</h4>
       <ul>
-        <li><a href="https://cleaningsucasa.com" target="_blank">Cleaning Su Casa</a></li>
-        <li><a href="https://cleaningsucasa.com/airbnb.html" target="_blank">Airbnb Cleaning</a></li>
-        <li><a href="https://cleaningsucasa.com/residential.html" target="_blank">Residential</a></li>
-        <li><a href="https://cleaningsucasa.com/about.html" target="_blank">About Us</a></li>
+        <li><a href="https://home.cleaningsucasa.com" target="_blank">Cleaning Su Casa</a></li>
+        <li><a href="https://airbnb.cleaningsucasa.com" target="_blank">Airbnb Cleaning</a></li>
+        <li><a href="https://residential.cleaningsucasa.com" target="_blank">Residential</a></li>
+        <li><a href="https://about.cleaningsucasa.com" target="_blank">About Us</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -323,7 +348,7 @@
       <ul>
         <li><a href="mailto:CleaningSuOficina@gmail.com">CleaningSuOficina@gmail.com</a></li>
         <li><a href="https://book.cleaningsuoficina.com">Get a Quote</a></li>
-        <li><a href="https://cleaningsucasa.com/jobs.html" target="_blank">Job Openings</a></li>
+        <li><a href="https://jobs.cleaningsucasa.com" target="_blank">Job Openings</a></li>
       </ul>
     </div>
   </div>
@@ -332,7 +357,6 @@
     <span>Made with care in Anchorage, AK &#128153;</span>
   </div>
 </footer>
-
 <script>
 (function(){
   if('scrollRestoration' in history){ history.scrollRestoration = 'manual'; }
@@ -370,18 +394,25 @@
       if(target){
         e.preventDefault();
         var menu = document.getElementById('mobileMenu');
-        if(menu) menu.classList.remove('open');
-        var bars = document.querySelectorAll('.nav-hamburger span');
-        bars.forEach(function(b){ b.style.transform = ''; b.style.opacity = ''; });
-        setTimeout(function(){ target.scrollIntoView({behavior:'smooth'}); }, 50);
+        if(menu && menu.classList.contains('open')){ menu.classList.remove('open'); }
+        setTimeout(function(){ target.scrollIntoView({behavior:'smooth',block:'start'}); }, 100);
       }
     });
   });
+  var fadeEls = document.querySelectorAll('.fade-up');
+  if('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('visible'); obs.unobserve(en.target); }
+      });
+    },{threshold:0.12});
+    fadeEls.forEach(function(el){ obs.observe(el); });
+  } else {
+    fadeEls.forEach(function(el){ el.classList.add('visible'); });
+  }
   window.addEventListener('scroll', function(){
-    var nav = document.querySelector('nav');
-    if(nav) nav.style.boxShadow = window.scrollY > 50 ? '0 4px 30px rgba(0,0,0,0.12)' : 'none';
+    var nav = document.getElementById('mainNav');
+    if(nav) nav.style.boxShadow = window.scrollY > 50 ? '0 4px 30px rgba(26,37,47,0.12)' : 'none';
   });
 })();
-</script>
-</body>
-</html>
+</script></body></html>
