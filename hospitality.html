@@ -50,7 +50,7 @@
     .nav-mobile a:hover{background:var(--off-white);color:var(--accent-dark)}
     .mob-section{font-size:0.68rem!important;font-weight:700!important;letter-spacing:0.12em!important;text-transform:uppercase;color:var(--text-faint)!important;padding:1rem 1rem 0.3rem!important}
     .mob-indent{padding-left:2.2rem!important}
-    .mob-cta{background:linear-gradient(135deg,#E8E0C8 0%,#7A6A5A 40%,#4A3E34 75%,#3E3830 100%)!important;color:#F5E8C0!important;text-align:center!important;border-radius:50px!important;margin-top:1rem;font-weight:600!important}
+    .mob-cta{background:linear-gradient(135deg,#7B4F15 0%,#C49A35 60%,#e0b84a 100%) !important;color:white !important;text-align:center !important;border-radius:50px !important;margin-top:1rem;font-weight:600 !important}
     @media(max-width:860px){.nav-links{display:none}.nav-hamburger{display:flex}}
     .hero{min-height:88vh;display:flex;align-items:center;padding:9rem 5.5rem 6rem;background-color:#120a02;background-image:radial-gradient(circle at 18% 28%,rgba(123,79,21,0.68) 0%,transparent 45%),radial-gradient(circle at 80% 68%,rgba(196,154,53,0.42) 0%,transparent 40%),radial-gradient(circle at 55% 8%,rgba(224,184,74,0.07) 0%,transparent 30%),radial-gradient(ellipse at 4% 88%,rgba(61,31,8,0.62) 0%,transparent 40%),radial-gradient(circle 1px at center,rgba(255,255,255,0.05) 0%,transparent 100%);background-size:100% 100%,100% 100%,100% 100%,100% 100%,26px 26px;position:relative;overflow:hidden}
     .hero-orb{position:absolute;border-radius:50%;pointer-events:none}
@@ -181,6 +181,11 @@
       .footer-grid{grid-template-columns:1fr;gap:2rem}
       .footer-bottom{flex-direction:column;gap:0.5rem;text-align:center}
     }
+      .nav-cta{background:linear-gradient(135deg,#7B4F15 0%,#C49A35 60%,#e0b84a 100%) !important;color:white !important;box-shadow:0 4px 18px rgba(123,79,21,0.42) !important;position:relative;overflow:hidden}
+    .nav-cta:hover{box-shadow:0 4px 18px rgba(123,79,21,0.60) !important;transform:translateY(-1px)}
+    .nav-cta::before{content:'';position:absolute;width:60px;height:60px;border-radius:50%;border:1.5px solid rgba(255,240,180,0.40);top:-22px;left:-16px;pointer-events:none;box-shadow:0 0 0 14px rgba(255,240,180,0.12),0 0 0 28px rgba(255,240,180,0.05)}
+    .nav-cta::after{content:none}
+      .mob-cta{background:linear-gradient(135deg,#7B4F15 0%,#C49A35 60%,#e0b84a 100%) !important;color:white !important;text-align:center !important;border-radius:50px !important;margin-top:1rem;font-weight:600 !important}
   </style>
 </head>
 <body>
@@ -211,6 +216,7 @@
   <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="nav-mobile" id="mobileMenu">
+  <a href="https://home.cleaningsuoficina.com">&#127968; &nbsp;Home</a>
   <div class="mob-section">Services</div>
   <a href="https://office.cleaningsuoficina.com" class="mob-indent">&#127970; &nbsp;Office Buildings</a>
   <a href="https://hospitality.cleaningsuoficina.com" class="mob-indent">&#127976; &nbsp;Hospitality</a>
